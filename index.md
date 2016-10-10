@@ -13,9 +13,6 @@ layout: home
         <div class="twelve columns">
           <h3 class="describe-title">Команда Heisen</h3>
           <p class="describe-p">Heisen - сообщество людей, которое объединяет желанием научиться новому и участием  в интересных проектах. У нас быстро учатся и самостоятельно решают поставленные задачи. Мы реализуем и вашу идею!</p>
-                   {% for a in site.authorss %}
-                       <p> {{ a.name}} <img src="{{ a.avatar }}"></p>
-                      {% endfor %}
         </div>
       </div>
       <div class="row button-row">
