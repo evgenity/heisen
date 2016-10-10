@@ -63,7 +63,8 @@
   </div>
 
 	{{ content }}
-	<div class="block-6 footer">
+
+  <footer class="block-6" id="colophon">
     <div class="container">
       <div class="row">
         <div class="four columns">
@@ -102,7 +103,17 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script><script type="text/javascript">
+  $(document).ready(function() {
+    var bodyHeight = $("body").height();
+    var vwptHeight = $(window).height();
+    if (vwptHeight > bodyHeight) {
+      $("footer#colophon").css("position","absolute").css("bottom",0).css("width", "100%");
+     }
+   });
+  </script>
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
