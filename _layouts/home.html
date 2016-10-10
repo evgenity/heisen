@@ -49,7 +49,7 @@
       </div>
       <div class="four columns nav-buttons">
         <div class="three columns">
-          <a href="{{ "/" | absolute_url }}"><p class="p-nav active-button">О Нас</p></a>
+          <a href="{{ "/" | absolute_url }}"><p class="p-nav">О Нас</p></a>
         </div>
         <div class="three columns">
           <a href="{{ "/team" | absolute_url }}"><p class="p-nav">Команда</p></a>
@@ -106,13 +106,13 @@
   </footer>
 
   <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script><script type="text/javascript">
-  $(document).ready(function() {
+  setInterval(function() {
     var bodyHeight = $("body").height();
     var vwptHeight = $(window).height();
     if (vwptHeight > bodyHeight) {
       $("footer#colophon").css("position","absolute").css("bottom",0).css("width", "100%");
      }
-   });
+   }, 1000);
   </script>
 
 <!-- End Document
