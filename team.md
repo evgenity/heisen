@@ -12,7 +12,7 @@ permalink: /team/
         </div>
       </div>
 
-      <div class="row names-team">
+      <div class="row container">
         <div class="two columns">
           <img class="u-max-full-width avatar" src="{{ "images/team/Evgeni_Bikov.png" | absolute_url }}">
           <p>Женя</p>
@@ -37,9 +37,7 @@ permalink: /team/
           <img class="u-max-full-width avatar" src="{{ "images/team/Yann_Pavlenko.png" | absolute_url }}">
           <p>Ян</p>
         </div>
-      </div>
-
-      <div class="row names-team">
+      
         <div class="two columns">
           <img class="u-max-full-width avatar" src="{{ "images/team/Alexandr_Kosicin.png" | absolute_url }}">
           <p>Саша</p>
@@ -64,9 +62,6 @@ permalink: /team/
           <img class="u-max-full-width avatar" src="{{ "images/team/Mark_Vinogradov.png" | absolute_url }}">
           <p>Марк</p>
         </div>
-      </div>
-
-      <div class="row names-team">
         <div class="two columns">
           <img class="u-max-full-width avatar" src="{{ "images/team/Mihail_Shestopalov.png" | absolute_url }}">
           <p>Михаил</p>
@@ -91,9 +86,6 @@ permalink: /team/
           <img class="u-max-full-width avatar" src="{{ "images/team/Vyacheslav_Ivanchenko.png" | absolute_url }}">
           <p>Слава</p>
         </div>
-      </div>
-
-      <div class="row names-team">
         <div class="two columns">
           <img class="u-max-full-width avatar" src="{{ "images/team/Artem_Gaydukov.png" | absolute_url }}">
           <p>Артем</p>
