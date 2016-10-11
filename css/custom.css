@@ -94,7 +94,7 @@ _______________________________________________*/
 .block-6 {
 	background-color: #484d52;
 	color: white;
-	padding-top: 30px;
+	padding-top: 50px;
 	padding-bottom: 30px;
 }
 
@@ -239,8 +239,8 @@ _________________________________________________*/
 	margin: 10px;
 }
 
-.foot-header {
-	padding-bottom: 10px;
+.row-adress {
+	text-align: right;
 }
 
 .share-button a:active, .share-button a:hover {
