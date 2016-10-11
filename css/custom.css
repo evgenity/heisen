@@ -46,7 +46,7 @@ ___________________________________________________*/
 }
 
 .nav-buttons {
-	text-align: center;
+	text-align: right;
 	padding-top: 15px;
 	padding-bottom: 2px;
 }
@@ -57,6 +57,7 @@ ___________________________________________________*/
 
 .brand-name {
 	padding-top: 4px;
+	padding-left: 2%;
 }
 
 /*BLOCKS
@@ -278,4 +279,32 @@ _________________________________________________*/
 	display: block;
 	width: auto;
 	height: auto;
+}
+
+/*For mobiles*/
+@media (max-width: 650px) {
+	.nav-buttons {width: 80%; padding-top: 10px;}
+	.nav-logo {width: 20%;}
+	.logotype {width: 35px; padding-top: 5px;}
+	.brand-name {display: none;}
+	.block-1 {padding-top: 40px;}
+	.mob-nav-1 {width: 25%;}
+	.mob-nav-2 {width: 35%;}
+	.describe {padding: 10% 5% 5% 5%;}
+	.mc-field-group {float: none;}
+	.button-border {float: none;}
+	.block-2 {    
+	    margin: 0 auto;
+	    padding: 0% 10% 3% 10%;
+	    background-image: none;
+    	}
+    .block-4 {padding-top: 20px;}
+    .container-block {padding-left: 0%;}
+    .icons {width: 10%;}
+    .work {width: 90%; padding-left: 5%;}
+    .block-6 {padding-top: 30px;}
+    .share-mob {width: 100%; text-align: center; padding-top: 20px;}
+    .share-button {width: 32%;}
+    .contacts-mob {width: 100%; text-align: center;}
+    .adress-mob {display: none;}
 }
