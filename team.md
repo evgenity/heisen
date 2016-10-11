@@ -12,10 +12,10 @@ permalink: /team/
 			</div>
 		</div>
 		<div class="row names-team">
-			{% for a in site.authorss %}
-			<div class="two columns">
+			{% for a in site.teamates %}
+			<div class="two columns member">
 				<img class="u-max-full-width avatar" src="{{ a.avatar }}">
-				<p class=""> {{ a.display_name}}</p>
+				<p class=""> {{ a.display}}</p>
 			</div>
 			{% endfor %}
 		</div>

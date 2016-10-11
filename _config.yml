@@ -33,10 +33,361 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-authorss:
-  - name: Vladimir Ternovykh
-    display_name: Вова
-    avatar: ../images/team/Vladimir_Ternovykh.png
-  - name: Jörgen Mortensen
-    display_name: Jörgen
-    avatar: 12e480a364a5c19214f99b4dfe9a11d5
+teamates:
+  - name:       Evgeni Bikov
+    display:    Женя
+    avatar:     ../images/team/Evgeni_Bikov.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Vladimir Ternovykh
+    display:    Вова
+    avatar:     ../images/team/Vladimir_Ternovykh.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Andrey Tarkhov
+    display:    Андрей
+    avatar:     ../images/team/Andrey_Tarkhov.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Vitaly Pavlenko
+    display:    Виталий
+    avatar:     ../images/team/Vitaly_Pavlenko.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Gleb Voropaev
+    display:    Глеб
+    avatar:     ../images/team/Gleb_Voropaev.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Mark Vinogradov
+    display:    Марк
+    avatar:     ../images/team/Mark_Vinogradov.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Dmitriy Andreev
+    display:    Дима
+    avatar:     ../images/team/Dmitriy_Andreev.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Pavel Reutov
+    display:    Павел
+    avatar:     ../images/team/Pavel_Reutov.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Yann Pavlenko
+    display:    Ян
+    avatar:     ../images/team/Yann_Pavlenko.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Artem Gaydukov
+    display:    Артем
+    avatar:     ../images/team/Artem_Gaydukov.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Dmitriy Shubenok
+    display:    Дима
+    avatar:     ../images/team/Dmitriy_Shubenok.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Alexandr Kosicin
+    display:    Саша
+    avatar:     ../images/team/Alexandr_Kosicin.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Artem Alekseev
+    display:    Артём
+    avatar:     ../images/team/Artem_Alekseev.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Ilyans Nugaev
+    display:    Ильянс
+    avatar:     ../images/team/Ilyans_Nugaev.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Kseniya Borisovskaya
+    display:    Ксения
+    avatar:     ../images/team/Kseniya_Borisovskaya.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Mihail Shestopalov
+    display:    Михаил
+    avatar:     ../images/team/Mihail_Shestopalov.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Nadezhda Gapeeva
+    display:    Надежда
+    avatar:     ../images/team/Nadezhda_Gapeeva.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Nurbek Kuspanov
+    display:    Нурбек
+    avatar:     ../images/team/Nurbek_Kuspanov.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Olga Podolceva
+    display:    Ольга
+    avatar:     ../images/team/Olga_Podolceva.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Vyacheslav Ivanchenko
+    display:    Слава
+    avatar:     ../images/team/Vyacheslav_Ivanchenko.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Yuriy Markin
+    display:    Юрий
+    avatar:     ../images/team/Yuriy_Markin.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Alena Egorova
+    display:    Алёна
+    avatar:     ../images/team/Alena_Egorova.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Girls
+    display:    + 9 девушек
+    avatar:     ../images/team/avatar_woman.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Boys
+    display:    + 71 парень
+    avatar:     ../images/team/avatar_man.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+

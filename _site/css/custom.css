@@ -99,7 +99,7 @@ _______________________________________________*/
 
 .block-header {
 	text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 /*Inside BLOCKS
@@ -175,11 +175,11 @@ _________________________________________________*/
 .avatar {
     border: 1px solid #cecece;
     border-radius: 100px;
-    filter: grayscale(100%);
+/*    filter: grayscale(100%);
 	-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
 	-ms-filter: grayscale(100%);
-	-o-filter: grayscale(100%);
+	-o-filter: grayscale(100%);*/
 }
 
 .avatar:active, .avatar:focus, .avatar:hover {
@@ -257,4 +257,14 @@ _________________________________________________*/
 
 .button-border {
 	padding-left: 10px;
+}
+
+@media (min-width: 550px) {
+	.member:first-child {
+    	margin-left: 4%;
+	}
+}
+
+.member {
+	padding-bottom: 2%;
 }
