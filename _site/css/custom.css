@@ -293,11 +293,7 @@ _________________________________________________*/
 	.describe {padding: 10% 5% 5% 5%;}
 	.mc-field-group {float: none;}
 	.button-border {float: none;}
-	.block-2 {    
-	    margin: 0 auto;
-	    padding: 0% 10% 3% 10%;
-	    background-image: none;
-    	}
+	.block-2 {margin: 0 auto; padding: 0% 10% 3% 10%; background-image: none;}
     .block-4 {padding-top: 20px;}
     .container-block {padding-left: 0%;}
     .icons {width: 10%;}
@@ -307,4 +303,11 @@ _________________________________________________*/
     .share-button {width: 32%;}
     .contacts-mob {width: 100%; text-align: center;}
     .adress-mob {display: none;}
+    .member {width: 25%; padding-right: 2%; font-size: 1.3rem;}
+    .team {padding-top: 80px;}
+    .names-team {padding-left: 0;}
+    .block-header {padding-bottom: 0px;}
+	.wrapper {display: table;}
+	.content-left {display: table-footer-group; text-align: left; padding-left: 0;}
+	.content-right {padding-right: 0;}
 }
