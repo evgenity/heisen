@@ -16,6 +16,7 @@ permalink: /partners/
         {% for p in site.partners %}
         <tr>
           <td><img class="u-max-full-width partner-logo" src="{{ p.logo | absolute_url }}"></td>
+          <td>{{p.description}}</td>
         </tr>
         {% endfor %}
       </table>

@@ -38,20 +38,20 @@ layout: home
     <div class="row">
       <div class="seven columns offset-by-five describe-block-2">
         <div class="quest">
-          <h5>Что такое Heisen?</h5>
-          <p>Heisen - это лифт, ваш лифт к знаниям. Внутри нашей команды вы научитесь различным технологиям программирования, работать в команде и будете участвовать в проектах.</p>
-        </div>
-        <div class="quest">
           <h5>Я не умею программировать</h5>
-          <p>Научитесь, программирование - это лишь инструмент для создания продукта.</p>
+          <p>Не беда, научитесь, если захотите.</p>
         </div>
         <div class="quest">
           <h5>Это бесплатно?</h5>
-          <p>Абсолютно бесплатно, также, вы сможете написать себе крутое резюме, включить в него проекты, которые вы сделали с командой, и найти хорошую работу.</p>
+          <p>Да, абсолютно.</p>
         </div>
         <div class="quest">
           <h5>Как я смогу научиться?</h5>
-          <p>В команде быстро учатся, остается лишь желание.</p>
+          <p>В команде, под нашим присмотром. Учиться плавать - в воде.</p>
+        </div>
+        <div class="quest">
+          <h5>В чем подвох? Можно подробнее?</h5>
+          <p>Подвоха нет. Мы вместе делаем хорошее дело.</p>
         </div>
       </div>
     </div>
@@ -66,39 +66,21 @@ layout: home
       </div>
       <div class="container container-block">
         <div class="row">
-          <div class="one column icons"><i class="fa fa-hand-o-right" aria-hidden="true"></i></div>
+          <div class="one column icons"><i class="fa  fa-hand-o-up" aria-hidden="true"></i></div>
           <div class="eleven columns work">
-            <p>вы заходите в наш командный чат в слаке</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="one column icons"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></div>
-          <div class="eleven columns work">
-            <p>вступаете в главные и интересные вам каналы</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="one column icons"><i class="fa fa-hand-o-up" aria-hidden="true"></i></div>
-          <div class="eleven columns work">
-            <p>ставите себе SMART цель</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="one column icons"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i></div>
-          <div class="eleven columns work">
-            <p>создаете свое резюме/портфолио</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="one column icons"><i class="fa fa-hand-o-down" aria-hidden="true"></i></div>
-          <div class="eleven columns work">
-            <p>выбираете проект, который вам понравился</p>
+            <p>зайти в командный чат и начать выполнять задания</p>
           </div>
         </div>
         <div class="row">
           <div class="one column icons"><i class="fa fa-hand-peace-o" aria-hidden="true"></i></div>
           <div class="eleven columns work">
-            <p>обучаетесь и делаете проекты вместе с командой</p>
+            <p>подобрать проект для развития скиллов (мы поможем)</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="one column icons"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></div>
+          <div class="eleven columns work">
+            <p>реализовать проект самостоятельно или с командой</p>
           </div>
         </div>
       </div>

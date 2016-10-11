@@ -16,10 +16,12 @@
 title: Heisen
 email: info@heisenhub.com
 description: > # this means to ignore newlines until "baseurl:"
-  Heisen - сообщество людей, которое объединяет желанием научиться новому и участием  в интересных проектах.
-  У нас быстро учатся и самостоятельно решают поставленные задачи. Мы реализуем и вашу идею!
+  Сообщество Heisen объединяет активных людей. Мы хотим делиться опытом и учиться новому.
+  Мы быстро растем и самостоятельно решаем любые задачи.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://heisenhub.com" # the base hostname & protocol for your site, e.g. http://example.com
+address: 3503 Jack Northrop Ave Suite AH761 Hawthorne, CA 90250
+phone: +7 (985) 128-37-08
 twitter_username: vlterno
 github_username:  vlterno
 
@@ -395,22 +397,27 @@ partners:
     logo:       images/partners/skoltech.png
     website:    none
     description: >
-      none
+      &#171;The mission of Skoltech is to educate students, advance knowledge, and foster innovation 
+      in order to address critical scientific, technological, and innovation challenges and gaps facing Russia 
+      and the world.&#187;
 
   - name:       ObjectLab
     logo:       images/partners/objectlab.png
     website:    none
     description: >
-      none
+      &#171;Мы — команда профессионалов в сфере разработки новых продуктов, промышленного дизайна. 
+      Мы открыты к сотрудничеству с компаниями, стартапами или дизайнерами желающими выпустить свой продукт,
+      выжав из него максимум возможностей!&#187; 
 
   - name:       Inspector Cloud
     logo:       images/partners/inspectorcloud.png
     website:    none
     description: >
-      none
+      &#171;Онлайн-платформа аудита торговых точек. Объективная и актуальная информация о товарах на полках 
+      помогает брендам и ритейлерам повысить продажи.&#187; 
 
   - name:       Notion
     logo:       images/partners/notionso.png
     website:    none
     description: >
-      none
+      &#171;Docs, Wikis, Tasks. Seamlessly in One. A unified workspace for modern teams.&#187; 

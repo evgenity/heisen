@@ -75,6 +75,7 @@ _______________________________________________*/
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left;
+  padding-bottom: 20px;
 }
 
 .block-3 {
@@ -235,6 +236,7 @@ _________________________________________________*/
 
 .share-button a {
 	color: white;
+	margin: 10px;
 }
 
 .foot-header {
@@ -270,5 +272,9 @@ _________________________________________________*/
 }
 
 .partner-logo {
-	max-height: 80px;
+	max-height: 150px;
+	min-width: 150px;
+	display: block;
+	width: auto;
+	height: auto;
 }
