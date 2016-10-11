@@ -12,22 +12,13 @@ permalink: /partners/
       </div>
     </div>
     <div class="container">
-      <div class="row logos-row">
-        <div class="four columns">
-        <img class="u-max-full-width" src="{{ "images/partners/skoltech.png" | absolute_url }}">
-        </div>
-        <div class="four columns">
-          <img class="logos u-max-full-width" src="{{ "images/partners/notionso.png" | absolute_url }}">
-        </div>
-        <div class="four columns">
-          <img class="u-max-full-width" src="{{ "images/partners/objectlab.png" | absolute_url }}">
-        </div>
-      </div>
-      <div class="row logos-row">
-        <div class="four columns">
-          <img class="logos" src="{{ "images/partners/inspectorcloud.png" | absolute_url }}">
-        </div>
-      </div>
+      <table class="u-full-width">
+        {% for p in site.partners %}
+        <tr>
+          <td><img class="u-max-full-width partner-logo" src="{{ p.logo | absolute_url }}"></td>
+        </tr>
+        {% endfor %}
+      </table>
     </div>
   </div>
 </div>

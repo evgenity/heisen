@@ -5,14 +5,12 @@
 layout: home
 ---
 
-
-
 <div class="block-1">
     <div class="container describe">
       <div class="row">
         <div class="twelve columns">
           <h3 class="describe-title">Команда Heisen</h3>
-          <p class="describe-p">Heisen - сообщество людей, которое объединяет желанием научиться новому и участием  в интересных проектах. У нас быстро учатся и самостоятельно решают поставленные задачи. Мы реализуем и вашу идею!</p>
+          <p class="describe-p">{{site.description}}</p>
         </div>
       </div>
       <div class="row button-row">

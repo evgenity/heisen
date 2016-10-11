@@ -1,121 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>HeisenHub</title>
-  <meta name="description" content="">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{site.description}}">
   <meta name="author" content="">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css"> -->
   <link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400" rel="stylesheet">
   <script src="https://use.fontawesome.com/fafb9ab347.js"></script>
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
   <link rel="stylesheet" href="{{ "/css/normalize.css" | absolute_url }}">
   <link rel="stylesheet" href="{{ "/css/skeleton.css" | absolute_url }}">
   <link rel="stylesheet" href="{{ "/css/custom.css" | absolute_url }}">
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="{{ "images/favicon.png" | absolute_url }}">
-
+  <link rel="icon" type="image/png" href="{{ "favicon.png" | absolute_url }}">
 </head>
 <body>
-
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="row nav-main">
-    <div class="twelve columns nav-bar">
-      <div class="eight columns">
-        <div class="brand">
-          <div class="one columns">
-            <a href="index.html"><img class="logotype" src="{{ "images/heisen_spaces_transparent_logo.png" | absolute_url }}"></a>
-          </div>
-          <div class="eight columns brand-name">
-            <h5>Heisen</h5>
-          </div>
-        </div>
-      </div>
-      <div class="four columns nav-buttons">
-        <div class="three columns">
-          <a href="{{ "/" | absolute_url }}"><p class="p-nav">О Нас</p></a>
-        </div>
-        <div class="three columns">
-          <a href="{{ "/team" | absolute_url }}"><p class="p-nav">Команда</p></a>
-        </div>
-        <div class="three columns">
-          <a href="{{ "/partners" | absolute_url }}"><p class="p-nav">Партнеры</p></a>
-        </div>
-        <div class="offset-by-three columns"></div>
-      </div>
-    </div>
-  </div>
-
+  	{% include header.html %}
 	{{ content }}
-
-  <footer class="block-6" id="colophon">
-    <div class="container">
-      <div class="row">
-        <div class="four columns">
-          <div class="row foot-header">
-            <p>Сотрудничество</p>
-          </div>
-          <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@heisenhub.com">info@heisenhub.com</a></p>
-          <p><i class="fa fa-phone-square" aria-hidden="true"></i> +7 (985) 128-37-08</p>
-        </div>
-        <div class="four columns">
-          <div class="row foot-header">
-            <p>Узнать больше о проекте</p>
-          </div>
-          <p>Напишите нам в <a href="https://telegram.me/vlterno">telegram</a></p>
-        </div>
-        <div class="four columns">
-          <div class="row foot-header">
-            <p>Поделиться в соцсетях</p>
-          </div>
-          <div class="row share-row">
-            <div class="two columns share-button">
-              <a href="http://vk.com/share.php?url=http://heisenhub.com" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
-            </div>
-            <div class="two columns share-button">
-              <a href="https://pokem.io/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            </div>
-            <div class="two columns share-button">
-              <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="twelve columns foot">
-          <small>© 2016 Heisen LLC</small>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script><script type="text/javascript">
-  setInterval(function() {
-    var bodyHeight = $("body").height();
-    var vwptHeight = $(window).height();
-    if (vwptHeight > bodyHeight) {
-      $("footer#colophon").css("position","absolute").css("bottom",0).css("width", "100%");
-     }
-   }, 1000);
-  </script>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	{% include footer.html %}
 </body>
 </html>
