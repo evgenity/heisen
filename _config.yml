@@ -421,3 +421,11 @@ partners:
     website:    none
     description: >
       &#171;Docs, Wikis, Tasks. Seamlessly in One. A unified workspace for modern teams.&#187; 
+
+navigation:
+  - text:       О нас 
+    url:        /    
+  - text:       Команда 
+    url:        /team/
+  - text:       Партнеры
+    url:        /partners/

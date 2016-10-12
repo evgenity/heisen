@@ -11,7 +11,15 @@
         </div>
       </div>
       <div class="five columns nav-buttons">
-        <div class="three columns mob-nav-1">
+        {% assign url = page.url|remove:'' %}
+        {% for link in site.navigation %}
+        <div class="three columns mob-nav-2 p-nav">
+          <div {% if url == link.url %} class="active-button p-nav" {% endif %}>
+            <a href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>
+          </div>
+        </div>
+        {% endfor %}
+<!--         <div class="three columns mob-nav-1">
           <a href="{{ "/" | absolute_url }}"><p class="p-nav">О Нас</p></a>
         </div>
         <div class="three columns mob-nav-2">
@@ -19,7 +27,7 @@
         </div>
         <div class="three columns mob-nav-2">
           <a href="{{ "/partners/"  | absolute_url }}"><p class="p-nav">Партнеры</p></a>
-        </div>
+        </div> -->
         <div class="offset-by-three columns"></div>
       </div>
     </div>
