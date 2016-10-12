@@ -288,8 +288,7 @@ _________________________________________________*/
 	.logotype {width: 35px; padding-top: 5px;}
 	.brand-name {display: none;}
 	.block-1 {padding-top: 40px;}
-	/*.mob-nav-1 {width: 25%;}*/
-	.mob-nav-2 {width: 33%;}
+	.mob-nav-2 {width: 33%; padding-right: 45px;}
 	.describe {padding: 10% 5% 5% 5%;}
 	.mc-field-group {float: none;}
 	.button-border {float: none;}

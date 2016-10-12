@@ -50,6 +50,21 @@ teamates:
     skills:     none
     slack:      none
 
+  - name:       Kirill Andreev
+    display:    Кирилл
+    avatar:     ../images/team/Kirill_Andreev.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
   - name:       Vladimir Ternovykh
     display:    Вова
     avatar:     ../images/team/Vladimir_Ternovykh.png
@@ -195,6 +210,21 @@ teamates:
     cv:         none
     github:     none
     email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
+  - name:       Elina Kurbangaleeva
+    display:    Лина
+    avatar:     ../images/team/Elina_Kurbangaleeva.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:     _none
     phone:      none
     hashtags:   none
     skills:     none
