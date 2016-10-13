@@ -80,6 +80,21 @@ teamates:
     skills:     none
     slack:      none
 
+  - name:       Serafim Novichkov
+    display:    Серафим
+    avatar:     ../images/team/Serafim_Novichkov.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
   - name:       Andrey Tarkhov
     display:    Андрей
     avatar:     ../images/team/Andrey_Tarkhov.png
