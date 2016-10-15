@@ -410,6 +410,21 @@ teamates:
     skills:     none
     slack:      none
 
+  - name        Danil Samukhin
+    display:    Данил
+    avatar:     ../images/team/Danil_Samukhin.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
   - name:       Girls
     display:    + 9 девушек
     avatar:     ../images/team/avatar_woman.png
