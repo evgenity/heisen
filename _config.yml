@@ -425,6 +425,21 @@ teamates:
     skills:     none
     slack:      none
 
+  - name        Natalia Karpova
+    display:    Наталья
+    avatar:     ../images/team/Natalia_Karpova.png
+    twitter:    none
+    vk:         none
+    fb:         none
+    projects:   none
+    cv:         none
+    github:     none
+    email:      none
+    phone:      none
+    hashtags:   none
+    skills:     none
+    slack:      none
+
   - name:       Girls
     display:    + 9 девушек
     avatar:     ../images/team/avatar_woman.png
