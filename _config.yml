@@ -410,7 +410,7 @@ teamates:
     skills:     none
     slack:      none
 
-  - name        Danil Samukhin
+  - name:        Danil Samukhin
     display:    Данил
     avatar:     ../images/team/Danil_Samukhin.png
     twitter:    none
@@ -425,7 +425,7 @@ teamates:
     skills:     none
     slack:      none
 
-  - name        Natalia Karpova
+  - name:        Natalia Karpova
     display:    Наталья
     avatar:     ../images/team/Natalia_Karpova.png
     twitter:    none
@@ -495,7 +495,15 @@ partners:
     logo:       images/partners/notionso.png
     website:    none
     description: >
-      &#171;Docs, Wikis, Tasks. Seamlessly in One. A unified workspace for modern teams.&#187; 
+      &#171;Docs, Wikis, Tasks. Seamlessly in One. A unified workspace for modern teams.&#187;
+
+  - name:       Notion
+    logo:       images/partners/americano.png
+    website:    none
+    description: >
+      &#171;Americano — здесь можно вкусно позавтракать, пополнить силы после шопинга и встретиться вечером с друзьями! 
+      Ароматы свежесваренного кофе, блюда от Сергея Колодезнева, десерты на любой вкус и дружеская атмосфера, 
+      делают это место таким уютным и приятным для встреч!&#187; 
 
 navigation:
   - text:       О нас 
