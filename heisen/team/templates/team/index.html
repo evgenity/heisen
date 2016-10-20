@@ -1,0 +1,17 @@
+{% load static %}
+{% if team_list %}
+      {% for person in team_list %}
+              <div>
+                {% if person.avatar and person.full_name %}
+                  {% with 'images/'|add:person.avatar as image_static %}
+                  <img src="{% static image_static %}" height=100px/>
+                  {% endwith %}
+                {% else %}
+                  <img src="{{person.slack_avatar }}" height=100px />
+                {% endif %}
+                <p> {{person.full_name}}</p>
+              </div>
+      {% endfor %}
+{% else %}
+    <p>No team atm.</p>
+{% endif %}

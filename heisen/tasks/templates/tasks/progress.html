@@ -1,0 +1,19 @@
+{% load static %}
+{% if progress %}
+<table>
+  <th>
+    {% for td in progress[0] %}
+    <td>{{td}}</td>
+    {% endfor %}
+  </th>
+  {% for tr in progress[1:] %}
+  <tr>
+    {% for td in tr  %}
+      <td>{{td}}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+    <p>No progress</p>
+{% endif %}

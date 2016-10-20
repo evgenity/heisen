@@ -1,0 +1,11 @@
+{% load static %}
+{% if tasks_list %}
+      {% for task in tasks_list %}
+              <div>
+                <br>{{task.number}}</br>
+                <pre>{{task.task_text|safe}}</pre>
+              </div>
+      {% endfor %}
+{% else %}
+    <p>No tasks atm.</p>
+{% endif %}
