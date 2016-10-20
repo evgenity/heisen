@@ -68,7 +68,7 @@ _______________________________________________*/
 
 .block-1-foot {
 	background-color: #484d52;
-	color: white;
+	color: #fff;
 }
 
 .block-2 {
@@ -80,7 +80,7 @@ _______________________________________________*/
 }
 
 .block-3 {
-	background-color: #ffffff;
+	background-color: #fff;
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
@@ -89,12 +89,12 @@ _______________________________________________*/
 	background-color: #42ae63;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	color: white;
+	color: #fff;
 }
 
 .block-6 {
 	background-color: #484d52;
-	color: white;
+	color: #fff;
 	padding-top: 50px;
 	padding-bottom: 30px;
 }
@@ -116,7 +116,7 @@ _________________________________________________*/
 }
 
 .describe-foot {
-	padding: 5% 5% 5% 5%;
+	padding: 5%;
 }
 
 .describe-title {
@@ -137,7 +137,7 @@ _________________________________________________*/
 }
 
 .describe-block-2 h5 {
-	margin-bottom: 0.5rem;
+	margin-bottom: .5rem;
 	font-size: 2rem;
 }
 
@@ -208,21 +208,21 @@ _________________________________________________*/
 }
 
 .input-foot {
-	color: black;
+	color: #000;
 }
 
 .button-foot {
-	color: white !important;
+	color: #fff !important;
 }
 
 .button-foot:hover, .button-foot:focus {
-	color: white;
+	color: #fff;
     border-color: #42ae63 !important;
     background-color: #42ae63;
 }
 
 .button-head:hover, .button-head:focus {
-	color: white !important;
+	color: #fff !important;
     border-color: #42ae63 !important; 
     background-color: #42ae63;
 }
@@ -246,8 +246,8 @@ _________________________________________________*/
 }
 
 .share-button a:active, .share-button a:hover {
-	border-color: #1EAEDB;
-	color: #1EAEDB;
+	border-color: #1eaedb;
+	color: #1eaedb;
 }
 
 .logos {
