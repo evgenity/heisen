@@ -17,13 +17,11 @@ class Task(models.Model):
         #return "T{number}. {text}".format(number=self.number,text=self.task_text)
         return "T"+str(self.number)
 
-
-
-
 @python_2_unicode_compatible
 class Reaction(models.Model):
     task_id = models.ForeignKey(Task, on_delete=models.CASCADE)
+    task_number = models.IntegerField()
     emoji_text = models.CharField(max_length=20)
     user_id = models.ForeignKey(Person, on_delete=models.CASCADE)
     def __str__(self):
-        return "{1} reacted for task {2}: {3}".format(self.user_id,self.task_id,self.emoji_text) #ALARM
+        return str(self.user_id)

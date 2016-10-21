@@ -1,11 +1,16 @@
-{% load static %}
+{% extends "main_template.html" %}
+{% block title %}
+  Heisen
+{% endblock %}
+{% block content %}
 {% if tasks_list %}
       {% for task in tasks_list %}
               <div>
-                <br>{{task.number}}</br>
+                <h5>{{task.number}}</h5>
                 <pre>{{task.task_text|safe}}</pre>
               </div>
       {% endfor %}
 {% else %}
     <p>No tasks atm.</p>
 {% endif %}
+{% endblock %}

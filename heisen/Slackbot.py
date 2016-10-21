@@ -52,6 +52,9 @@ def get_channel_history(channel_id):
     return messages
 
 def filter_messages(messages,regexp):
+    for message in messages:
+        if message['text'][0].encode('utf-8')=="Т":
+            message['text'] = "T"+message['text'][1:] #I gave up
     return [ (re.search(regexp, message['text']).group(0),message)  for message in messages if message['type']=="message" and re.match(regexp,message['text'])]
 
 def emoji_comp(reaction1,reaction2):
@@ -143,7 +146,7 @@ def save_html(filename,data):
 def job():
     invoke_from_slack()
     save_table(messages=filter_messages(get_channel_history(tasks_channel),'^([TТ])\d+'),table=tasks_db,message_name="task")
-    save_table(messages=filter_messages(get_channel_history(project_channel),'^\d+[.:]'),table=projects_db,message_name="project")
+    save_table(messages=filter_messages(get_channel_history(project_channel),'^\d+[.:\)]'),table=projects_db,message_name="project")
     html_projects=render_to_file(filename="projects_template.html",data=collections.OrderedDict(sorted(get_project_list().items(), key=lambda t: t[0])))
     html_table=render_to_file(filename="table_template.html",data=get_progression())
     save_html(filename='html/progress_table.html',data=html_table)
