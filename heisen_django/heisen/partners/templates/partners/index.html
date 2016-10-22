@@ -1,0 +1,34 @@
+{% extends "main_template.html" %}
+{% block title %}Partners{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="container projects">
+    <div class="row">
+      <div class="twelve columns block-header">
+        <h4>Партнёры</h4>
+      </div>
+    </div>
+    <div class="container">
+
+{% if partners_list %}
+
+      <table class="u-full-width">
+        <tbody>
+            {% for partner in partners_list %}
+          <tr class="wrapper">
+          <td class="content-right"><img class="u-max-full-width partner-logo" src="{% static partner.image %}"></td>
+          <td class="content-left">{{partner.description}}
+          </td>
+        </tr>
+            {% endfor %}
+      </tbody></table>
+    </div>
+  </div>
+
+{% else %}
+    <p>No partners atm.</p>
+{% endif %}
+
+{% endblock %}

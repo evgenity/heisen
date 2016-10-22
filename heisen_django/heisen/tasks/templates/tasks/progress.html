@@ -1,0 +1,25 @@
+{% extends "main_template.html" %}
+{% block title %}
+  Heisen
+{% endblock %}
+{% block content %}
+{% load static %}
+{% if progress %}
+<table>
+  <th>
+    {% for td in th %}
+    <td>{{td}}</td>
+    {% endfor %}
+  </th>
+  {% for task_row in progress%}
+  <tr>
+    {% for td in task_row  %}
+      <td>{{td}}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+    <p>No progress</p>
+{% endif %}
+{%endblock%}

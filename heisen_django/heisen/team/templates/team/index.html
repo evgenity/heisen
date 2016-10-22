@@ -1,0 +1,37 @@
+{% extends "main_template.html" %}
+{% block title %}Heisen{% endblock %}
+
+{% block content %}
+{% load static %}
+{% if team_list %}
+
+<div class="block-3 team">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns block-header">
+				<h4>Наша команда</h4>
+			</div>
+		</div>
+		<div class="row names-team">
+
+      {% for person in team_list %}
+      <div class="two columns member">
+        {% if person.avatar and person.full_name %}
+          {% with 'images/'|add:person.avatar as image_static %}
+            <img class="u-max-full-width avatar" src="{% static image_static %}">
+          {% endwith %}
+          {% else %}
+            <img class="u-max-full-width avatar" src="{{person.slack_avatar }}">
+          {% endif %}
+          <p class=""> {{person.first_name}} </p>
+      </div>
+      {% endfor %}
+		</div>
+	</div>
+</div>
+
+{% else %}
+    <p>No team atm.</p>
+{% endif %}
+
+{% endblock %}
