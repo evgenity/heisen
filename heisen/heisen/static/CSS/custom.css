@@ -10,6 +10,10 @@ body {
 	font-weight: 300;
 }
 
+.th, .td {
+  padding: 0;
+}
+
 /*NAVBAR
 ___________________________________________________*/
 .logotype {
@@ -99,6 +103,13 @@ _______________________________________________*/
 	padding-bottom: 30px;
 }
 
+.block-table {
+	background-color: #f2f2f2;
+	padding-top: 75px;
+	padding-bottom: 30px;
+  padding-left: 40px;
+  padding-right: 50px;
+}
 .block-header {
 	text-align: center;
     padding-bottom: 15px;
@@ -191,7 +202,7 @@ _________________________________________________*/
 	-ms-filter: none;
 	-o-filter: none;
 
-} 
+}
 
 .names-team {
 	text-align: center;
@@ -223,7 +234,7 @@ _________________________________________________*/
 
 .button-head:hover, .button-head:focus {
 	color: white !important;
-    border-color: #42ae63 !important; 
+    border-color: #42ae63 !important;
     background-color: #42ae63;
 }
 

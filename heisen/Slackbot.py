@@ -57,60 +57,6 @@ def filter_messages(messages,regexp):
             message['text'] = "T"+message['text'][1:] #I gave up
     return [ (re.search(regexp, message['text']).group(0),message)  for message in messages if message['type']=="message" and re.match(regexp,message['text'])]
 
-def emoji_comp(reaction1,reaction2):
-    emoji_rankings=["","💤","😡","😅","👍","🤘",]
-    emoji_rankings.index(reaction1)
-    if (emoji_rankings.index(reaction1)<emoji_rankings.index(reaction2)):
-        return reaction2
-    else:
-        return reaction1
-
-def save_table(messages,table,message_name):
-    for x in messages:
-        message={
-            message_name+"_id":int(re.search('\d+',x[0]).group(0)),
-            "text":x[1]["text"],
-            "user":x[1]["user"]
-            }
-        try:
-            message["reactions"]=x[1]["reactions"]
-        except KeyError:
-            message["reactions"]=""
-        if message not in table:
-            table.append(message)
-
-def user_by_id(table, id):
-    for x in table:
-        if x["id"]==id:
-            return x
-
-
-def get_progression():
-    progression={}
-    for user in users_db:
-        if(user["name"]):
-            progression[user["name"]]=[""]*len(tasks_db)
-    for task in tasks_db:
-        for reaction in task["reactions"]:
-            for user in reaction["users"]:
-                try:
-                    progression[user_by_id(users_db,user)["name"]][task["task_id"]]=emoji_list[reaction["name"]]
-                except KeyError:
-                    pass
-                except IndexError:
-                    pass
-    return progression
-
-def get_project_list():
-    projects={}
-    for project in projects_db:
-        projects[project["project_id"]]={
-            "text":htmlize_links(project["text"]),
-            "author":user_by_id(users_db,project["user"])['name'],
-            "reactions":{emoji.emojize(":"+reaction["name"]+":", use_aliases=True): [user_by_id(users_db,user)["name"] for user in reaction["users"]] for reaction in project["reactions"]}
-        }
-    return projects
-
 def linkrepl( match ):
     split = match.group()[1:-1].split(r'|')
     adress = split[0]
@@ -120,34 +66,13 @@ def linkrepl( match ):
         name= Person.objects.get(slack_id=adress[1:]).slack_name
         adress = "https://heisenspaces.slack.com/team/" + name
         text = name
-        return "<a href='{adress}'>{text}<a>".format(adress=adress,text=text)
+        return "<a href='{adress}'>{text}</a>".format(adress=adress,text=text)
     if len(split)==2:
         text = split[1]
-        return "<a href='{adress}'>{text}<a>".format(adress=adress,text=text)
+        return "<a href='{adress}'>{text}</a>".format(adress=adress,text=text)
     else:
-        return "<a href='{adress}'>{text}<a>".format(adress=adress,text=adress)
+        return "<a href='{adress}'>{text}</a>".format(adress=adress,text=adress)
 
 def htmlize_links(string):
     p = re.compile('\<(.*?)(\|.*?)?\>')
     return p.sub(linkrepl, string)
-
-def render_to_file(data,filename):
-    f1=open(filename,"r")
-    template=Template(f1.read())
-    f1.close()
-    return template.render(data=data)
-
-def save_html(filename,data):
-    f1=open(filename,"w")
-    f1.write(data)
-    f1.close()
-
-
-def job():
-    invoke_from_slack()
-    save_table(messages=filter_messages(get_channel_history(tasks_channel),'^([TТ])\d+'),table=tasks_db,message_name="task")
-    save_table(messages=filter_messages(get_channel_history(project_channel),'^\d+[.:\)]'),table=projects_db,message_name="project")
-    html_projects=render_to_file(filename="projects_template.html",data=collections.OrderedDict(sorted(get_project_list().items(), key=lambda t: t[0])))
-    html_table=render_to_file(filename="table_template.html",data=get_progression())
-    save_html(filename='html/progress_table.html',data=html_table)
-    save_html(filename='html/project_ideas.html',data=html_projects)

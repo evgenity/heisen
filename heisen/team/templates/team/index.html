@@ -23,7 +23,12 @@
           {% else %}
             <img class="u-max-full-width avatar" src="{{person.slack_avatar }}">
           {% endif %}
-          <p class=""> {{person.first_name}} </p>
+					{% if person.first_name %}
+					<p class=""> {{person.first_name}} </p>
+					{% else %}
+					<p class=""> {{person.slack_name}} </p>
+					{% endif %}
+          
       </div>
       {% endfor %}
 		</div>

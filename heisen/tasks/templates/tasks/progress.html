@@ -5,20 +5,25 @@
 {% block content %}
 {% load static %}
 {% if progress %}
-<table>
-  <th>
-    {% for td in th %}
-    <td>{{td}}</td>
+
+<div class="block-table" style="overflow: scroll;">
+  <table class="u-full-width" >
+    <th class="th">
+      {% for td in th %}
+      <td class="td">{{td}}</td>
+      {% endfor %}
+    </th>
+    {% for task_row in progress%}
+    <tr>
+      <td class="td"><b>{{task_row.0}}</b></td>
+      {% for td in task_row.1  %}
+        <td class="td">{{td}}</td>
+      {% endfor %}
+    </tr>
     {% endfor %}
-  </th>
-  {% for task_row in progress%}
-  <tr>
-    {% for td in task_row  %}
-      <td>{{td}}</td>
-    {% endfor %}
-  </tr>
-  {% endfor %}
-</table>
+  </table>
+</div>
+
 {% else %}
     <p>No progress</p>
 {% endif %}

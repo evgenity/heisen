@@ -3,13 +3,17 @@
   Heisen
 {% endblock %}
 {% block content %}
-{% if tasks_list %}
-      {% for task in tasks_list %}
-              <div>
-                <h5>{{task.number}}</h5>
-                <pre>{{task.task_text|safe}}</pre>
-              </div>
-      {% endfor %}
+<div class="block-3">
+
+<div class="container">
+  {% if tasks_list %}
+        {% for task in tasks_list %}
+                <div class="wrapper">
+                  <h5>{{task.number}}</h5>
+                  <pre>{{task.task_text|safe}}</pre>
+                </div>
+        {% endfor %}</div>
+</div>
 {% else %}
     <p>No tasks atm.</p>
 {% endif %}

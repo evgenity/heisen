@@ -4,12 +4,13 @@ from django.views import generic
 from django.core.exceptions import ObjectDoesNotExist
 
 from team.models import Person
+from tasks.models import Progress
 
 class IndexView(generic.ListView):
     template_name = 'team/index.html'
     context_object_name = 'team_list'
     def get_queryset(self):
-        return Person.objects.exclude(avatar="",slack_avatar="").exclude(full_name="").order_by('-rating','full_name')
+        return Person.objects.exclude(avatar="",slack_avatar="").exclude(full_name="").order_by('-progress__rating','full_name')
 
 def update(request):
     import requests
@@ -38,8 +39,11 @@ def update(request):
                 except KeyError: last_name=""
                 try: email = user['profile']['email']
                 except KeyError: email=""
+                progress= Progress()
+                progress.save()
                 if email:
                     user_model=Person(
+                        progress = progress,
                         full_name = full_name ,
                         first_name = first_name ,
                         last_name = last_name,
