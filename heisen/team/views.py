@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.admin.views.decorators import staff_member_required
 
 from team.models import Person
 from tasks.models import Progress
@@ -12,6 +13,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Person.objects.exclude(avatar="",slack_avatar="").exclude(full_name="").order_by('-progress__rating','full_name')
 
+@staff_member_required
 def update(request):
     import requests
     import json

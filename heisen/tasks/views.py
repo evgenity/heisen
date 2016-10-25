@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views import generic
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.admin.views.decorators import staff_member_required
 
 from team.models import Person
 from tasks.models import Task, Reaction, Progress
@@ -32,12 +33,9 @@ def progress(request):
         for t in tb:
             if t[0]==reaction.user_id.slack_name:
                 t[1][reaction.task_number - 1] = emoji_text
-    for tr in tb:
-        print tr[0], [t for t in tr[1]]
-        #tb[reaction.user_id.slack_name][reaction.task_number - 1] = emoji_text
     return render(request, template_name,context={'progress':tb,'th':th})
 
-
+@staff_member_required
 def update(request):
     import requests
     import json
