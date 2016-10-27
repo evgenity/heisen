@@ -6,5 +6,4 @@ app_name = 'tasks'
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^progress$', views.progress, name='progress'),
-    url(r'^update$', views.update, name='update'),
 ]

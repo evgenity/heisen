@@ -17,62 +17,23 @@ class IndexView(generic.ListView):
         return Task.objects.all().order_by('-number')
 
 def progress(request):
-    import emoji
-    template_name = 'tasks/progress.html'
-    th=[]
-    th.extend(['T'+str(i+1)for i in range (Task.objects.count())])
-    tb=[]
-    for person in Person.objects.all().order_by('-progress__task_progress'):
-        tb.append([person.slack_name.encode('utf-8'),["" for i in range(Task.objects.count())]])
-        #tb.append([person.slack_name].extend(["" for i in range (Task.objects.count())]))
-    for reaction in Reaction.objects.all():
-        if reaction.emoji_text == "the_horns":
-            emoji_text = "🤘"
-        else:
-            emoji_text = emoji.emojize(":"+reaction.emoji_text.encode('utf-8')+":", use_aliases=True)
-        for t in tb:
-            if t[0]==reaction.user_id.slack_name:
-                t[1][reaction.task_number - 1] = emoji_text
-    return render(request, template_name,context={'progress':tb,'th':th})
-
-@staff_member_required
-def update(request):
-    import requests
-    import json
-    import re
-    import Slackbot as sb
-    # print(json.dumps(sb.filter_messages(sb.get_channel_history(sb.tasks_channel),'^([TТ])\d+'),
-    #                       sort_keys=True,indent=4, separators=(',', ': ')))
-    for channel in sb.get_channels():
-        try:
-            channel_model = Channel.objects.get(channel_id=channel['id'])
-            channel_model.name = channel['name']
-        except ObjectDoesNotExist:
-            channel_model = Channel(channel_id=channel['id'],name=channel['name'])
-        channel_model.save()
-    for person in Person.objects.all():
-        person.progress.update_rating()
-    for task in sb.filter_messages(sb.get_channel_history(sb.tasks_channel), '^([TТ])\d+'):
-        try:
-            task_model = Task.objects.get(number = int(task[0][1:]))
-        except ObjectDoesNotExist:
-            task_model = Task(number = int(task[0][1:]))
-        task_model.task_text = re.sub('^([ТT])\d+[\.\s-]+',"",sb.htmlize_links(task[1]['text']))
-        task_model.save()
-        try:
-            for reaction in task[1]['reactions']:
-                for user in reaction['users']:
-                    try:
-                        reaction_model = Reaction.objects.get(task_id = task_model,user_id = Person.objects.get(slack_id=user))
-                    except ObjectDoesNotExist:
-                        reaction_model = Reaction(
-                            task_id = task_model,
-                            user_id = Person.objects.get(slack_id=user),
-                        )
-                    reaction_model.emoji_text = reaction['name']
-                    reaction_model.task_number = int(task[0][1:])
-                    reaction_model.save()
-        except KeyError:
-            pass
-
-    return redirect('/tasks')
+    if request.user.is_authenticated():
+        import emoji
+        template_name = 'tasks/progress.html'
+        th=[]
+        th.extend(['T'+str(i+1)for i in range (Task.objects.count())])
+        tb=[]
+        for person in Person.objects.all().order_by('-progress__task_progress'):
+            tb.append([person.slack_name.encode('utf-8'),["" for i in range(Task.objects.count())]])
+            #tb.append([person.slack_name].extend(["" for i in range (Task.objects.count())]))
+        for reaction in Reaction.objects.all():
+            if reaction.emoji_text == "the_horns":
+                emoji_text = "🤘"
+            else:
+                emoji_text = emoji.emojize(":"+reaction.emoji_text.encode('utf-8')+":", use_aliases=True)
+            for t in tb:
+                if t[0]==reaction.user_id.slack_name:
+                    t[1][reaction.task_number - 1] = emoji_text
+        return render(request, template_name,context={'progress':tb,'th':th})
+    else:
+        return render(request, "tasks/login_failed.html")
