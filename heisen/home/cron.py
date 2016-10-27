@@ -70,5 +70,5 @@ def update_tasks():
             pass
 
 def job():
-    update_rating()
+    update_team()
     update_tasks()
