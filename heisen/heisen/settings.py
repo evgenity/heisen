@@ -23,7 +23,7 @@ LOGIN_REDIRECT_URL = '/'
 SECRET_KEY = 'fzk#=xkr$fr%)!s5wz$j*x-phhf4g41yu%i%emw##v9!xmtm^_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 #Django-crontab settings
 #https://pypi.python.org/pypi/django-crontab
 CRONJOBS = [
-    ('2 * * * *', 'home.cron.job','>> /var/log/heisen_updater.log'),
+    ('2 * * * *', 'home.cron.updater','>> /var/log/heisen_updater.log'),
 ]
 
 # Internationalization
