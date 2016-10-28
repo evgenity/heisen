@@ -21,7 +21,7 @@ def progress(request):
         import emoji
         template_name = 'tasks/progress.html'
         th=[]
-        th.extend(['T'+str(i+1)for i in range (Task.objects.count())])
+        th.extend([['T'+str(i+1),Task.objects.get(number=i+1).task_text]for i in range (Task.objects.count())])
         tb=[]
         for person in Person.objects.all().order_by('-progress__task_progress'):
             tb.append([person.slack_name.encode('utf-8'),["" for i in range(Task.objects.count())]])

@@ -4,16 +4,32 @@ import requests
 import json
 import re
 import Slackbot as sb
+from django.core.exceptions import ObjectDoesNotExist
 
 from team.models import Person
 from tasks.models import Task, Reaction, Progress
 from home.models import Channel
+
+def update_avatar(icon,link,user):
+    if re.match("^https:\/\/avatars\.slack-edge\.com",link):
+        user.avatar=1
+    else:
+        gurl=link.split("?")[0]+"?d=blank&s=1"
+        r=requests.get(gurl)
+        if icon == r.content:
+            user.avatar=0
+        else:
+            user.avatar=1
+
 
 def update_team():
     Slacktoken=os.environ['SLACK_TOKEN']
     url="https://slack.com/api/users.list?token="+Slacktoken
     r=requests.get(url)
     users=json.loads(r.text)
+    #print os.path.dirname(os.path.realpath(__file__))
+    f1=open(os.path.dirname(os.path.realpath(__file__))+"/templates/static/images/gravico.png","r")
+    gravico=f1.read()
     for user in users['members']:
         try: email = user['profile']['email']
         except KeyError: continue
@@ -24,7 +40,8 @@ def update_team():
             progress = Progress()
             progress.save()
             user_model.progress = progress
-        user_model.slack_avatar = user['profile']['image_192']
+        #AVATAR PART
+        update_avatar(icon=gravico,link=user['profile']['image_192'],user=user_model)
         try: user_model.full_name = user['profile']['real_name']
         except KeyError: user_model.full_name = user['name']
         try: user_model.first_name = user['profile']['first_name']
@@ -32,6 +49,7 @@ def update_team():
         try: user_model.last_name = user['profile']['last_name']
         except KeyError: last_name=""
         user_model.slack_name = user['name']
+        user_model.slack_avatar=user['profile']['image_192']
         email = user['profile']['email']
         user_model.save()
 
@@ -69,6 +87,6 @@ def update_tasks():
         except KeyError:
             pass
 
-def job():
+def updater():
     update_team()
     update_tasks()

@@ -16,19 +16,13 @@
 
       {% for person in team_list %}
       <div class="two columns member">
-        {% if person.avatar and person.full_name %}
-          {% with 'images/'|add:person.avatar as image_static %}
-            <img class="u-max-full-width avatar" src="{% static image_static %}">
-          {% endwith %}
-          {% else %}
-            <img class="u-max-full-width avatar" src="{{person.slack_avatar }}">
-          {% endif %}
+				<img class="u-max-full-width avatar" src="{{person.slack_avatar }}">
 				{% if person.first_name %}
 					<p class=""> {{person.first_name}} </p>
 				{% else %}
 					<p class=""> {{person.slack_name}} </p>
 				{% endif %}
-          
+
       </div>
       {% endfor %}
 		</div>

@@ -10,7 +10,8 @@
   <table class="u-full-width" >
     <th class="th">
       {% for td in th %}
-      <td class="td">{{td}}</td>
+      <td class="td">{{td.0}} <p>{{td.1}}</p></td>
+
       {% endfor %}
     </th>
     {% for task_row in progress%}

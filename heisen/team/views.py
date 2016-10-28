@@ -11,4 +11,4 @@ class IndexView(generic.ListView):
     template_name = 'team/index.html'
     context_object_name = 'team_list'
     def get_queryset(self):
-        return Person.objects.exclude(avatar="",slack_avatar="").order_by('-progress__rating')
+        return Person.objects.all().order_by('-avatar','-progress__rating')

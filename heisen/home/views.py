@@ -1,20 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render_to_response, render
 from django.contrib import auth
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
     template_name = 'home/index.html'
     return render(request,template_name)
 
-class LoginForm(forms.Form):
-    username = forms.CharField(label=u'name')
-    password = forms.CharField(label=u'password', widget=forms.PasswordInput())
 
-def log_in(request):
-    if ('username' in request.REQUEST) and ('password' in request.REQUEST):
-        username = request.REQUEST['username']
-        password = request.REQUEST['password']
-        user = authenticate(username=username, password=password)
-        print(user)
-    return render_to_response('login.html')
+
+def register(request):
+    form = UserCreationForm()
+    if request.method == 'POST':
+        data = request.POST.copy()
+        errors = form.get_validation_errors(data)
+        if not errors:
+            #new_user = form.save(data)
+            print data
+            return HttpResponseRedirect("/")
+    else:
+        data, errors = {}, {}
+
+    return render_to_response("registration/register.html", {
+        'form' : forms.FormWrapper(form, data, errors)
+    })
