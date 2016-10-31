@@ -17,7 +17,8 @@ class IndexView(generic.ListView):
         return Task.objects.all().order_by('-number')
 
 def progress(request):
-    if request.user.is_authenticated():
+    #if request.user.is_authenticated():
+    if 1==1: 
         import emoji
         template_name = 'tasks/progress.html'
         th=[]

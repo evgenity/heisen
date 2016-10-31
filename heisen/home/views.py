@@ -9,7 +9,9 @@ def index(request):
     template_name = 'home/index.html'
     return render(request,template_name)
 
-
+def robots(request):
+    template_name = 'home/robots.txt'
+    return render(request,template_name)
 
 def register(request):
     form = UserCreationForm()

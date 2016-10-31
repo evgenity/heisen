@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from . import views
-
+from home.views import robots
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^partners/', include('partners.urls')),
@@ -32,5 +32,5 @@ urlpatterns = [
     url(r'^accounts/loggedin/$', views.loggedin, name='loggedin'),
     url(r'^accounts/login_error/$', views.login_error, name='login_error'),
     url(r'^accounts/logout/$', views.logout, name='logout'),
-
+    url(r'^robots.txt$',robots,name='robots'),
     ]
