@@ -16,8 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from home.views import register
-
+from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,7 +25,12 @@ urlpatterns = [
     url(r'^tasks/', include('tasks.urls')),
     url(r'^team/', include('team.urls')),
     url(r'^$', include('home.urls')),
-    url(r'^login/$', auth_views.login, name='login'),
-    url(r'^registration/$', register, name='registration'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+    url(r'^accounts/register/$', views.register, name='register'),
+    url(r'^accounts/register/complete/$', views.registration_complete, name='registration_complete'),
+    url(r'^accounts/login/$', views.login, name='login'),
+    url(r'^accounts/process_login/$', views.process_login, name='process_login'),
+    url(r'^accounts/loggedin/$', views.loggedin, name='loggedin'),
+    url(r'^accounts/login_error/$', views.login_error, name='login_error'),
+    url(r'^accounts/logout/$', views.logout, name='logout'),
+
     ]

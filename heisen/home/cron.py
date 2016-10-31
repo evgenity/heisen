@@ -64,6 +64,7 @@ def update_tasks():
         channel_model.save()
     for person in Person.objects.all():
         person.progress.update_rating()
+    Reaction.objects.all().delete()
     for task in sb.filter_messages(sb.get_channel_history(sb.tasks_channel), '^([TТ])\d+'):
         try:
             task_model = Task.objects.get(number = int(task[0][1:]))

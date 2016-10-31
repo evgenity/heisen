@@ -1,0 +1,9 @@
+{% extends "main_template.html" %}
+{% block title %}Logged In{% endblock %}
+{% block content %}
+
+<div class='block-3'><h1>Welcome {{username}}</h1>
+  <p>Thank you for logging in.</p>
+  <p><a href="/accounts/logout/">Logout</a></p>
+  </div>
+{% endblock %}

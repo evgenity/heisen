@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from django.utils.encoding import python_2_unicode_compatible
 import datetime
 from django.db import models
+from django.contrib.auth.models import User
 #from tasks.models import Progress
 
 
@@ -21,6 +22,7 @@ class Person(models.Model):
     thanks = models.ManyToManyField('self', through='Thank', symmetrical=False)
     rating = models.IntegerField(default=0)
     progress = models.OneToOneField('tasks.Progress')
+    user = models.OneToOneField(User,default=None,null=True, blank=True)
     def __str__(self):
         if self.full_name:
             return self.full_name
