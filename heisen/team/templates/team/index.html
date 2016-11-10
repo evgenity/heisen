@@ -18,9 +18,9 @@
       <div class="two columns member">
 				<img class="u-max-full-width avatar" src="{{person.slack_avatar }}">
 				{% if person.first_name %}
-					<p class=""> {{person.first_name}} </p>
+					<p class=""> {{person.first_name|truncatechars:10}} </p>
 				{% else %}
-					<p class=""> {{person.slack_name}} </p>
+					<p class=""> {{person.slack_name|truncatechars:10}} </p>
 				{% endif %}
 
       </div>
@@ -30,7 +30,9 @@
 </div>
 
 {% else %}
-    <p>No team atm.</p>
+		<div class="block-3 team">
+    	<p>No team atm.</p>
+    </div>
 {% endif %}
 
 {% endblock %}

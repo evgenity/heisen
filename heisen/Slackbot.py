@@ -13,12 +13,12 @@ from home.models import Channel
 from team.models import Person
 Slacktoken = os.environ['SLACK_TOKEN']
 
-emoji_list={
+'''emoji_list={
     "+1":"👍",
     "the_horns":"🤘",
     "sweat_smile":"😅",
     "rage":"😡",
-    "ZZZ":"💤",}
+    "ZZZ":"💤",}'''
 #https://api.slack.com - Slack API
 #https://api.slack.com/docs/oauth  - to get token
 tasks_channel='C2A76BCRZ'
@@ -59,20 +59,35 @@ def filter_messages(messages,regexp):
 
 def linkrepl( match ):
     split = match.group()[1:-1].split(r'|')
-    adress = split[0]
-    if adress[0] == "#":
-        adress = "https://heisenspaces.slack.com/messages/"+Channel.objects.get(channel_id=adress[1:]).name
-    elif adress[0] == "@":
-        name= Person.objects.get(slack_id=adress[1:]).slack_name
-        adress = "https://heisenspaces.slack.com/team/" + name
+    address = split[0]
+    if address[0] == "#":
+        address = "https://heisenspaces.slack.com/messages/"+Channel.objects.get(channel_id=address[1:]).name
+    elif address[0] == "@":
+        name= Person.objects.get(slack_id=address[1:]).slack_name
+        address = "https://heisenspaces.slack.com/team/" + name
         text = name
-        return "<a href='{adress}'>{text}</a>".format(adress=adress,text=text)
+        return "<a href='{address}'>{text}</a>".format(address=address,text=text)
     if len(split)==2:
         text = split[1]
-        return "<a href='{adress}'>{text}</a>".format(adress=adress,text=text)
+        return "<a href='{address}'>{text}</a>".format(address=address,text=text)
     else:
-        return "<a href='{adress}'>{text}</a>".format(adress=adress,text=adress)
+        return "<a href='{address}'>{text}</a>".format(address=address,text=address)
 
 def htmlize_links(string):
     p = re.compile('\<(.*?)(\|.*?)?\>')
     return p.sub(linkrepl, string)
+
+'''
+from home import cron
+cron.update_thanks()
+'''
+
+def get_persons(messages):
+    persons=[]
+    for message in messages:
+        if message['type']=="message" \
+                        and re.search('\<(.*?)(\|.*?)?\>',message['text']) \
+                        and re.search('\<(.*?)(\|.*?)?\>',message['text']).group(1)[0]=="@":
+            if "subtype" not in message.keys():
+                persons.append(re.search('\<(.*?)(\|.*?)?\>',message['text']).group(1)[1:])
+    return persons
