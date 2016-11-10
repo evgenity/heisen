@@ -49,8 +49,9 @@ def update_team():
         try: user_model.last_name = user['profile']['last_name']
         except KeyError: last_name=""
         user_model.slack_name = user['name']
+        user_model.slack_id=user['id']
         user_model.slack_avatar=user['profile']['image_192']
-        email = user['profile']['email']
+        user_model.email = user['profile']['email']
         user_model.save()
 
 def update_tasks():
@@ -62,8 +63,6 @@ def update_tasks():
         except ObjectDoesNotExist:
             channel_model = Channel(channel_id=channel['id'],name=channel['name'])
         channel_model.save()
-    for person in Person.objects.all():
-        person.progress.update_rating()
     Reaction.objects.all().delete()
     for task in sb.filter_messages(sb.get_channel_history(sb.tasks_channel), '^([TТ])\d+'):
         try:
@@ -87,7 +86,19 @@ def update_tasks():
                     reaction_model.save()
         except KeyError:
             pass
+    for person in Person.objects.all():
+        person.progress.update_rating()
+
+def update_thanks():
+    channel=Channel.objects.get(name="manythanks").channel_id
+    persons=sb.get_persons(sb.get_channel_history(channel))
+    for slack_id in persons:
+        person_model=Person.objects.get(slack_id=slack_id)
+        person_model.thanked=True
+        person_model.save()
+
 
 def updater():
     update_team()
     update_tasks()
+    update_thanks()
