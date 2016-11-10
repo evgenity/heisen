@@ -16,12 +16,6 @@ class IndexView(generic.ListView):
         return Person.objects.all().order_by('-avatar','-progress__rating')
 
 def TeamView(request):
-    template_name = 'team/index.html'
-    #context_object_name = 'team_list'
-    team_list=list(Person.objects.all().order_by('-avatar','-progress__rating'))
-    return render(request,template_name,context={'team_list':team_list} )
-
-def TeamView2(request):
     template_name = 'team/index2.html'
     return render(request,template_name)
 
