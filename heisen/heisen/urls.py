@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from . import views
 from home.views import robots
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^partners/', include('partners.urls')),
@@ -25,12 +26,7 @@ urlpatterns = [
     url(r'^tasks/', include('tasks.urls')),
     url(r'^team/', include('team.urls')),
     url(r'^$', include('home.urls')),
-    url(r'^accounts/register/$', views.register, name='register'),
-    url(r'^accounts/register/complete/$', views.registration_complete, name='registration_complete'),
-    url(r'^accounts/login/$', views.login, name='login'),
-    url(r'^accounts/process_login/$', views.process_login, name='process_login'),
-    url(r'^accounts/loggedin/$', views.loggedin, name='loggedin'),
-    url(r'^accounts/login_error/$', views.login_error, name='login_error'),
-    url(r'^accounts/logout/$', views.logout, name='logout'),
+    url('', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^complete/slack$', views.loggedin, name='index'),
     url(r'^robots.txt$',robots,name='robots'),
     ]

@@ -14,7 +14,11 @@
   <link rel="stylesheet" href="{% static 'CSS/normalize.css' %}">
   <link rel="stylesheet" href="{% static 'CSS/skeleton.css' %}">
   <link rel="stylesheet" href="{% static 'CSS/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'CSS/emoji.css' %}">
   <link rel="icon" type="image/png" href="{% static 'images/favicon.png'%}">
+  <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2"></script>
+  <script src="{% static 'JS/emoji.js' %}"></script>
+
 </head>
 <body>
     <div class="row nav-main header">
@@ -48,6 +52,18 @@
           <div >
             <a href="/partners/" title="">Партнеры</a>
           </div>
+        </div>
+        <div class="three columns mob-nav-2 p-nav">
+        {% if user.get_username%}
+        <div >
+          <a href="/profile" title="">Свой профиль</a>
+        </div>
+        {% else %}
+        <div >
+          <a href="{% url 'social:begin' 'slack' %}">Login with slack</a>
+        </div>
+        {% endif %}
+
         </div>
 
       </div>
