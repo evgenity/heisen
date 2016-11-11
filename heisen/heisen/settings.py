@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'django_crontab',
+    'social.apps.django_app.default',
     'partners.apps.PartnersConfig',
     'team.apps.TeamConfig',
     'home.apps.HomeConfig',
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -131,3 +133,32 @@ STATIC_ROOT = os.path.join(BASE_DIR, "../static/")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "heisen/static"),
 ]
+
+#Slack part
+SOCIAL_AUTH_SLACK_KEY = os.environ.get('SLACK_CLIENT_ID')
+SOCIAL_AUTH_SLACK_SECRET = os.environ.get('SLACK_CLIENT_SECRET')
+SOCIAL_AUTH_SLACK_SCOPE = ['identify']
+
+
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.slack.SlackOAuth2',
+)
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.user.create_user',
+    'heisen.views.bind_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)

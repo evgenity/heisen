@@ -9,8 +9,6 @@ def index(request):
     template_name = 'home/index.html'
     return render(request,template_name)
 
-
-
 def register(request):
     form = UserCreationForm()
     if request.method == 'POST':
