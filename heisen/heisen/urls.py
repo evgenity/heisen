@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from . import views
-
+from home.views import robots
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^$', include('home.urls')),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^complete/slack$', views.loggedin, name='index'),
+    url(r'^robots.txt$',robots,name='robots'),
     ]
