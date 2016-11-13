@@ -1,0 +1,18 @@
+{% extends "main_template.html" %}
+{% block title %}Heisen{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="block-3 team">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns block-header">
+				<h4>Наша команда</h4>
+			</div>
+		</div>
+			<div id="app">APPLICATION CONTENT</div>
+  		<script type="text/javascript" src={% static "/js/app.js" %}></script>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "main_template.html" %}
+{% block title %}Heisen{% endblock %}
+
+{% block content %}
+{% load static %}
+{% if team_list %}
+
+<div class="block-3 team">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns block-header">
+				<h4>Наша команда</h4>
+			</div>
+		</div>
+		<div class="row names-team">
+
+      {% for person in team_list %}
+      <div class="two columns member">
+				<img class="u-max-full-width avatar" src="{{person.slack_avatar }}">
+				{% if person.first_name %}
+					<p class=""> {{person.first_name|truncatechars:10}} </p>
+				{% else %}
+					<p class=""> {{person.slack_name|truncatechars:10}} </p>
+				{% endif %}
+
+      </div>
+      {% endfor %}
+		</div>
+	</div>
+</div>
+
+{% else %}
+		<div class="block-3 team">
+    	<p>No team atm.</p>
+    </div>
+{% endif %}
+
+{% endblock %}

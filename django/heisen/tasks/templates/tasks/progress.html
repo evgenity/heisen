@@ -1,0 +1,36 @@
+{% extends "main_template.html" %}
+{% block title %}
+  Heisen
+{% endblock %}
+{% block content %}
+{% load static %}
+{% if progress %}
+
+<div class="block-table" style="overflow: scroll;">
+  <table class="u-full-width" >
+    <th class="th">
+      {% for td in th %}
+      <td class="td">{{td.0}} <!--<p>{{td.1}}</p>--></td>
+
+      {% endfor %}
+    </th>
+    {% for task_row in progress%}
+    <tr>
+      {% if task_row.1 %}
+      <td class="td"><b><font color= "green">{{task_row.0}}</font></b></td>
+      {%else %}
+      <td class="td"><b>{{task_row.0}}</b></td>
+      {% endif %}
+
+      {% for td in task_row.2  %}
+        <td class="td">{{td}}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% else %}
+    <p>No progress</p>
+{% endif %}
+{%endblock%}

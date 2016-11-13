@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title%}{% endblock %}</title>
+  <meta name="google-site-verification" content="m6sYi9Zzvin2ojzxtYhRTErhmUIhJJViPzwcQM1VEdM" />
+  <meta name="description" content="Сообщество Heisen объединяет активных людей. Мы хотим делиться опытом и учиться новому. Мы быстро растем и самостоятельно решаем любые задачи.
+">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400" rel="stylesheet">
+  <script src="https://use.fontawesome.com/fafb9ab347.js"></script>
+  <link rel="stylesheet" href="{% static 'CSS/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'CSS/skeleton.css' %}">
+  <link rel="stylesheet" href="{% static 'CSS/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'CSS/emoji.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'images/favicon.png'%}">
+  <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2"></script>
+  <script src="{% static 'JS/emoji.js' %}"></script>
+
+</head>
+<body>
+    <div class="row nav-main header">
+    <div class="twelve columns nav-bar">
+      <div class="seven columns nav-logo">
+        <div class="brand">
+          <div class="one columns">
+            <a href=""><img class="logotype" src="{% static 'images/heisen_spaces_transparent_logo.png' %}"></a>
+          </div>
+          <div class="eight columns brand-name">
+            <h5>Heisen</h5>
+          </div>
+        </div>
+      </div>
+      <div class="five columns nav-buttons">
+
+
+        <div class="three columns mob-nav-2 p-nav">
+          <div >
+            <a href="/" title="">О нас</a>
+          </div>
+        </div>
+
+        <div class="three columns mob-nav-2 p-nav">
+          <div >
+            <a href="/team/" title="">Команда</a>
+          </div>
+        </div>
+
+        <div class="three columns mob-nav-2 p-nav">
+          <div >
+            <a href="/partners/" title="">Партнеры</a>
+          </div>
+        </div>
+        <div class="three columns mob-nav-2 p-nav">
+        {% if user.get_username%}
+        <div >
+          <a href="/profile" title="">Свой профиль</a>
+        </div>
+        {% else %}
+        <div >
+          <a href="{% url 'social:begin' 'slack' %}">Login with slack</a>
+        </div>
+        {% endif %}
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% block content %}
+{% endblock %}
+
+	<footer class="block-6" id="colophon">
+  <div class="container">
+    <a href="/tasks/progress">team progress</a>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="four columns contacts-mob">
+        <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@heisenhub.com">info@heisenhub.com</a></p>
+        <p><i class="fa fa-phone-square" aria-hidden="true"></i>+7 (985) 128-37-08</p>
+      </div>
+      <div class="four columns share-mob">
+        <div class="row share-row">
+          <div class="three columns share-button">
+            <a href="http://vk.com/share.php?url=http://heisenhub.com" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+          </div>
+          <div class="three columns share-button">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=heisenhub.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          </div>
+          <div class="three columns share-button">
+            <a href="https://twitter.com/intent/tweet?text=Heisen набирает новых рабов!&url=http://heisenhub.com&hashtags=heisen," target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </div>
+          <div class="three columns share-button">
+            <a href="https://heisenspaces.slack.com" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="four columns adress-mob">
+        <div class="row row-adress">
+          <p>3503 Jack Northrop Ave Suite AH761 Hawthorne, CA 90250</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns foot">
+        <small>© 2016 Heisen LLC</small>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter40177012 = new Ya.Metrika({ id:40177012, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40177012" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+  <!-- GoogleAnalytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-86530898-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
