@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import JsonResponse
 
-from team.models import Person,Tag,Level
+from team.models import Person,Tag
 from tasks.models import Progress
 
 
@@ -16,18 +16,14 @@ class IndexView(generic.ListView):
         return Person.objects.all().order_by('-avatar','-progress__rating')
 
 def TeamView(request):
-    template_name = 'team/index2.html'
+    template_name = 'team/index.html'
     return render(request,template_name)
+
+def Tags(requst):
+    return JsonResponse([tag.name for tag in Tag.objects.all()],safe=False)
 
 def Filter(request):
     team_list = Person.objects.all().order_by('-avatar','-progress__rating')
-    # print "REQUEST",request.GET
-    # for label in request.GET:
-    #     try:
-    #         tag=Tag.objects.get(name=label)
-    #         team_list=team_list.filter(tag=tag,tag_owner__level__gte=request.GET[label])
-    #     except ObjectDoesNotExist:
-    #         continue
     tl = []
     for person in team_list:
         if person.first_name:
@@ -35,10 +31,11 @@ def Filter(request):
         else:
             name = person.slack_name[:7]+"..."
         skills=[]
-        for tag in person.tag_owner.all():
-            skills.append(tag.tag.name)
+        for tag in person.tags.all():
+            skills.append(tag.name)
         tl.append({
             'name': name,
+            'slack_id': person.slack_id,
             'avatar': person.slack_avatar,
             'skills': skills,
         })

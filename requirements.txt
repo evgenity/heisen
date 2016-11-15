@@ -1,0 +1,16 @@
+Django==1.10.2
+django-crontab==0.7.1
+django-redis-cache==1.7.1
+django-social-auth==0.7.28
+emoji==0.3.9
+gunicorn==19.6.0
+httplib2==0.9.2
+jsonfield==1.0.3
+oauth2==1.9.0.post1
+oauthlib==2.0.0
+PyJWT==1.4.2
+python-openid==2.2.5
+python-social-auth==0.2.21
+requests==2.11.1
+requests-oauthlib==0.7.0
+six==1.10.0

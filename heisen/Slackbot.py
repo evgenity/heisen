@@ -77,10 +77,6 @@ def htmlize_links(string):
     p = re.compile('\<(.*?)(\|.*?)?\>')
     return p.sub(linkrepl, string)
 
-'''
-from home import cron
-cron.update_thanks()
-'''
 
 def get_persons(messages):
     persons=[]

@@ -6,7 +6,7 @@ import re
 import Slackbot as sb
 from django.core.exceptions import ObjectDoesNotExist
 
-from team.models import Person
+from team.models import Person, Tag
 from tasks.models import Task, Reaction, Progress
 from home.models import Channel
 
@@ -22,15 +22,16 @@ def update_avatar(icon,link,user):
             user.avatar=1
 
 
-def update_team():
+def update_team(break_user=None):
     Slacktoken=os.environ['SLACK_TOKEN']
     url="https://slack.com/api/users.list?token="+Slacktoken
     r=requests.get(url)
     users=json.loads(r.text)
-    #print os.path.dirname(os.path.realpath(__file__))
     f1=open(os.path.dirname(os.path.realpath(__file__))+"/templates/static/images/gravico.png","r")
     gravico=f1.read()
     for user in users['members']:
+        if break_user and user['name']!=break_user:
+            continue
         try: email = user['profile']['email']
         except KeyError: continue
         try:
@@ -53,9 +54,10 @@ def update_team():
         user_model.slack_avatar=user['profile']['image_192']
         user_model.email = user['profile']['email']
         user_model.save()
+        if break_user:
+            return user_model
 
-def update_tasks():
-
+def update_channels():
     for channel in sb.get_channels():
         try:
             channel_model = Channel.objects.get(channel_id=channel['id'])
@@ -63,6 +65,8 @@ def update_tasks():
         except ObjectDoesNotExist:
             channel_model = Channel(channel_id=channel['id'],name=channel['name'])
         channel_model.save()
+
+def update_tasks():
     Reaction.objects.all().delete()
     for task in sb.filter_messages(sb.get_channel_history(sb.tasks_channel), '^([TТ])\d+'):
         try:
@@ -97,8 +101,27 @@ def update_thanks():
         person_model.thanked=True
         person_model.save()
 
+def update_tags():
+    channel=Channel.objects.get(name="hashtags").channel_id
+    for tag in sb.filter_messages(sb.get_channel_history(channel), '^([A-Za-z0-9:_])+'):
+        tag_model = Tag.objects.get_or_create(name=tag[0])[0]
+        tag_model.description = tag[1]['text']
+        try:
+            for reaction in tag[1]['reactions']:
+                for user in reaction['users']:
+                    user_model = Person.objects.get(slack_id=user)
+                    user_model.tags.add(tag_model)
+                    user_model.save()
+        except KeyError:
+            pass
+        tag_model.save()
+
+
+
 
 def updater():
+    update_channels()
     update_team()
     update_tasks()
+    update_tags()
     update_thanks()

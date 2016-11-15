@@ -56,11 +56,11 @@
         <div class="three columns mob-nav-2 p-nav">
         {% if user.get_username%}
         <div >
-          <a href="/profile" title="">Свой профиль</a>
+          <a href= {{ '/profile/'|add:user.person.slack_id}} title="">Профиль</a>
         </div>
         {% else %}
         <div >
-          <a href="{% url 'social:begin' 'slack' %}">Login with slack</a>
+          <a href="{% url 'social:begin' 'slack' %}">Войти</a>
         </div>
         {% endif %}
 
@@ -74,9 +74,6 @@
 
 	<footer class="block-6" id="colophon">
   <div class="container">
-    <a href="/tasks/progress">team progress</a>
-  </div>
-  <div class="container">
     <div class="row">
       <div class="four columns contacts-mob">
         <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@heisenhub.com">info@heisenhub.com</a></p>
@@ -89,9 +86,6 @@
           </div>
           <div class="three columns share-button">
             <a href="https://www.youtube.com/channel/UClqUgNPjJM-ymB7g_29VO9w" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-          </div>
-          <div class="three columns share-button">
-            <a href="https://twitter.com/intent/tweet?text=Heisen набирает новых рабов!&url=http://heisenhub.com&hashtags=heisen," target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
           </div>
           <div class="three columns share-button">
             <a href="https://heisenspaces.slack.com" target="_blank"><i class="fa fa-slack" aria-hidden="true"></i></a>

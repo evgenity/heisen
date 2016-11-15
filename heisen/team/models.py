@@ -8,22 +8,22 @@ from django.contrib.auth.models import User
 
 @python_2_unicode_compatible
 class Person(models.Model):
-    full_name = models.CharField(max_length=200)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    displayed_name = models.CharField(max_length=50)
+    full_name = models.CharField(max_length=200,blank=True)
+    first_name = models.CharField(max_length=100,blank=True)
+    last_name = models.CharField(max_length=100,blank=True)
+    displayed_name = models.CharField(max_length=50,blank=True)
     slack_id = models.CharField(max_length=20)
     slack_name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=50)
-    cv_link = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
+    phone = models.CharField(max_length=50,blank=True)
+    cv_link = models.CharField(max_length=200,blank=True)
+    email = models.CharField(max_length=200,blank=True)
     avatar = models.CharField(max_length=400) #image link
     slack_avatar = models.CharField(max_length=400, default='')
     thanked = models.BooleanField(default=False)
     thanks = models.ManyToManyField('self', through='Thank', symmetrical=False)
     rating = models.IntegerField(default=0)
-    progress = models.OneToOneField('tasks.Progress')
-    user = models.OneToOneField(User,default=None,null=True, blank=True)
+    progress = models.OneToOneField('tasks.Progress', null=True, blank=True)
+    user = models.OneToOneField(User,related_name = 'person',default=None,null=True, blank=True)
     def __str__(self):
         if self.full_name:
             return self.full_name
@@ -43,15 +43,6 @@ class Thank(models.Model):
 class Tag(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
-    persons = models.ManyToManyField(Person,through='Level',symmetrical=False)
-    child_tag = models.ForeignKey('self',on_delete=models.CASCADE,null=True, blank=True)
+    persons = models.ManyToManyField(Person,related_name="tags")
     def __str__(self):
         return self.name
-
-@python_2_unicode_compatible
-class Level(models.Model):
-    level = models.IntegerField(default=0)
-    person = models.ForeignKey(Person, related_name = 'tag_owner', on_delete=models.CASCADE)
-    tag = models.ForeignKey(Tag, related_name = 'tag_name', on_delete=models.CASCADE)
-    def __str__(self):
-        return self.tag.name+self.person.slack_name

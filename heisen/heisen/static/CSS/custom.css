@@ -53,6 +53,7 @@ ___________________________________________________*/
 	text-align: right;
 	padding-top: 15px;
 	padding-bottom: 2px;
+  padding-right: 20px;
 }
 
 .brand {
@@ -254,6 +255,7 @@ _________________________________________________*/
 
 .row-adress {
 	text-align: right;
+  align: right;
 }
 
 .share-button a:active, .share-button a:hover {
@@ -293,13 +295,13 @@ _________________________________________________*/
 }
 
 /*For mobiles*/
-@media (max-width: 650px) {
+@media (max-width: 650px ) {
 	.nav-buttons {width: 80%; padding-top: 10px;}
 	.nav-logo {width: 20%;}
 	.logotype {width: 35px; padding-top: 5px;}
 	.brand-name {display: none;}
 	.block-1 {padding-top: 40px;}
-	.mob-nav-2 {width: 33%; padding-right: 45px;}
+	.mob-nav-2 {width: 33%; padding-right: 25px;}
 	.describe {padding: 10% 5% 5% 5%;}
 	.mc-field-group {float: none;}
 	.button-border {float: none;}
