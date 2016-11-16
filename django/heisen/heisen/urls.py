@@ -25,6 +25,7 @@ urlpatterns = [
     #url(r'^projects/', include('projects.urls')),
     url(r'^tasks/', include('tasks.urls')),
     url(r'^team/', include('team.urls')),
+    url(r'^contacts/', include('contacts.urls')),
     url(r'^$', include('home.urls')),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^complete/slack$', views.loggedin, name='index'),
