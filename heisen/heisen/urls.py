@@ -16,7 +16,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from . import views
-from home.views import robots, profile
+from home import views as home_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,6 +28,7 @@ urlpatterns = [
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^complete/slack$', views.loggedin, name='index'),
     url(r'^logout$',views.logout,name='logout'),
-    url(r'^robots.txt$',robots,name='robots'),
-    url(r'^profile/(?P<slack_id>[\w-]+)',profile,name='profile')
+    url(r'^robots.txt$',home_views.robots,name='robots'),
+    url(r'^profile/(?P<slack_id>[\w-]+)',home_views.profile,name='profile'),
+    url(r'^contacts',home_views.contacts,name='contacts'),
     ]

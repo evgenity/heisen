@@ -20,7 +20,7 @@ export default class Filter extends React.Component{
         return (
         <div className="row team-filter">
           {tags.map(function(filter, i) {
-            return (<div className='four columns filter'><input className='tag input' type="checkbox" key={i} value={filter} onChange={lambda}/> {filter} </div>)
+            return (<div className='three columns filter'><input className='tag input' type="checkbox" key={i} value={filter} onChange={lambda}/> {filter} </div>)
           })}
         </div>
         );

@@ -13,6 +13,10 @@ def robots(request):
     template_name = 'home/robots.txt'
     return render(request,template_name)
 
+def contacts(request):
+    template_name = 'home/contacts.html'
+    return render(request,template_name)
+
 def profile(request,slack_id):
     if request.method == 'GET':
         person = Person.objects.get(slack_id=slack_id)

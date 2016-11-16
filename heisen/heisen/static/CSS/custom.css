@@ -211,6 +211,10 @@ _________________________________________________*/
 	padding-left: 8%;
 }
 
+.team-filter{
+	padding-bottom: 20px;
+	padding-left: 8%;
+}
 .team {
 	padding-top: 100px;
 }
@@ -292,6 +296,10 @@ _________________________________________________*/
 	display: block;
 	width: auto;
 	height: auto;
+}
+
+.filter{
+  margin-left: 0;
 }
 
 /*For mobiles*/
