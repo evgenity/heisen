@@ -4,8 +4,8 @@ class Person extends Component{
     render() {
         return (
           <div className='two columns member'>
-            <a href={'/profile/'+this.props.slack_id}>
-              <img className='u-max-full-width avatar' src={this.props.slack_avatar} /></a>
+            <a href={this.props.url}>
+              <img className='u-max-full-width avatar' src={this.props.slack_avatar} /> </a>
             <p className='first_name'> {this.props.first_name} </p>
           </div>
         );
@@ -30,7 +30,7 @@ export default class Team extends Component {
     render() {
         const { team, filter } = this.props
         var team_list = this.team_filter(team,filter).map(function(p, i){
-            return <Person first_name={p.name} slack_id={p.slack_id} slack_avatar={p.avatar} key={i}/>
+            return <Person first_name={p.name} url={p.url} slack_avatar={p.avatar} key={i}/>
         });
         return (
               <div className='row names-team'>

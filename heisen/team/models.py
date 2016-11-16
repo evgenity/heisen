@@ -22,7 +22,7 @@ class Person(models.Model):
     thanked = models.BooleanField(default=False)
     thanks = models.ManyToManyField('self', through='Thank', symmetrical=False)
     rating = models.IntegerField(default=0)
-    progress = models.OneToOneField('tasks.Progress', null=True, blank=True)
+    progress = models.OneToOneField('tasks.Progress', null=True, blank=True, related_name="person")
     user = models.OneToOneField(User,related_name = 'person',default=None,null=True, blank=True)
     def __str__(self):
         if self.full_name:

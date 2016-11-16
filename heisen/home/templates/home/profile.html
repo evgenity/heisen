@@ -39,6 +39,9 @@ Heisen/Profile
 
     </form>
     {% endif %}
+    {% if user.person.slack_id == person.slack_id %}
+    <p><a href="/logout">выйти</a></p>
+    {% endif %}
     </div>
     <div class="four columns image">
     <img src={{person.slack_avatar}} style="floating:right"/>

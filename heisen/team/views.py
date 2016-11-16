@@ -33,10 +33,15 @@ def Filter(request):
         skills=[]
         for tag in person.tags.all():
             skills.append(tag.name)
-        tl.append({
+        p={
             'name': name,
-            'slack_id': person.slack_id,
             'avatar': person.slack_avatar,
             'skills': skills,
-        })
+            }
+        if request.user.is_staff:
+            p['url']='/profile/'+person.slack_id
+        else:
+            p['url']='#'
+        tl.append(p)
+
     return JsonResponse(tl,safe=False)

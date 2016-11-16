@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render_to_response, render, redirect
 from django.contrib import auth
 from django.http import HttpResponseRedirect
 
@@ -17,7 +17,13 @@ def profile(request,slack_id):
     if request.method == 'GET':
         person = Person.objects.get(slack_id=slack_id)
         template_name = 'home/profile.html'
-        return render(request,template_name,context={'person':person,'tags':Tag.objects.all()})
+        if request.user.is_authenticated:
+            if person.slack_id==request.user.person.slack_id or request.user.is_staff:
+                return render(request,template_name,context={'person':person,'tags':Tag.objects.all()})
+            else:
+                return redirect('/team')
+        else:
+            return redirect('/team')
     elif request.method == 'POST':
         person = Person.objects.get(slack_id=slack_id)
         if request.user.is_staff:

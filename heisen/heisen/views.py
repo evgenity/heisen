@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from form import RegistrationForm
@@ -15,7 +15,6 @@ def bind_user(backend, user, response, *args, **kwargs):
             person=Person.objects.get(slack_name=user.username.split("@")[0])
         except ObjectDoesNotExist:
             person=update_team(break_user=user.username.split("@")[0])
-
         person.user=user
         person.save()
 
@@ -25,4 +24,4 @@ def loggedin(request):
 
 def logout(request):
     auth.logout(request)
-    return render(request,'registration/logged_out.html')
+    return redirect('/')
