@@ -54,7 +54,12 @@
           </div>
         </div>
         <div class="three columns mob-nav-2 p-nav">
-        {% if user.get_username%}
+          <div >
+            <a href="/contacts/" title="">Контакты</a>
+          </div>
+        </div>
+        <div class="three columns mob-nav-2 p-nav">
+        <!-- {% if user.get_username%}
         <div >
           <a href="/profile" title="">Свой профиль</a>
         </div>
@@ -62,7 +67,7 @@
         <div >
           <a href="{% url 'social:begin' 'slack' %}">Login with slack</a>
         </div>
-        {% endif %}
+        {% endif %} -->
 
         </div>
 
