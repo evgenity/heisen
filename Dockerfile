@@ -27,8 +27,8 @@ RUN apt-get -yf install \
     build-essential \
     openssh-server \
     supervisor \
-    mlocate
-
+    mlocate \
+    cron
 
 # Install pip requirements
 ADD requirements.txt /code/
@@ -54,4 +54,7 @@ ADD ./letsencrypt/ /etc/letsencrypt/
 # Add main codebase
 ADD . /code/
 
+RUN python /code/heisen/manage.py collectstatic --noinput
+#RUN python /code/heisen/manage.py crontab add home.cron.updater
+#RUN service cron restart
 CMD ["/usr/bin/supervisord"]

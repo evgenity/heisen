@@ -1,3 +1,4 @@
+
 """
 Django settings for heisen project.
 
@@ -12,6 +13,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 
+APPEND_SLASH = False
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,7 +26,7 @@ SECRET_KEY = 'fzk#=xkr$fr%)!s5wz$j*x-phhf4g41yu%i%emw##v9!xmtm^_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','*']
 
 
 # Application definition
@@ -82,7 +84,8 @@ WSGI_APPLICATION = 'heisen.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'NAME': os.path.join(BASE_DIR, '/db/db.sqlite3'),
+        'NAME':'/tmp/db.sqlite3',
     }
 }
 
@@ -138,8 +141,8 @@ STATICFILES_DIRS = [
 SOCIAL_AUTH_SLACK_KEY = os.environ.get('SLACK_CLIENT_ID')
 SOCIAL_AUTH_SLACK_SECRET = os.environ.get('SLACK_CLIENT_SECRET')
 SOCIAL_AUTH_SLACK_SCOPE = ['identify']
-
-
+SOCIAL_AUTH_SANITIZE_REDIRECTS = False
+SOCIAL_AUTH_SLACK_AUTH_EXTRA_ARGUMENTS = {'team': 'heisenspaces'}
 
 AUTHENTICATION_BACKENDS = (
     'social.backends.slack.SlackOAuth2',

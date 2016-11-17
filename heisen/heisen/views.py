@@ -20,7 +20,7 @@ def bind_user(backend, user, response, *args, **kwargs):
 
 
 def loggedin(request):
-    return render(request,'registration/logged_out.html')
+    return redirect('/')
 
 def logout(request):
     auth.logout(request)
