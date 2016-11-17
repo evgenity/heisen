@@ -27,8 +27,15 @@ RUN apt-get -yf install \
     build-essential \
     openssh-server \
     supervisor \
+<<<<<<< HEAD
     mlocate \
     cron
+=======
+    mlocate\
+		nginx-extras\
+		cron
+
+>>>>>>> pre_release
 
 # Install pip requirements
 ADD requirements.txt /code/

@@ -18,7 +18,6 @@ def bind_user(backend, user, response, *args, **kwargs):
         person.user=user
         person.save()
 
-
 def loggedin(request):
     return redirect('/')
 

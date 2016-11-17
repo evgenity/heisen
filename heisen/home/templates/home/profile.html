@@ -4,8 +4,8 @@ Heisen/Profile
 {% endblock %}
 {% block content %}
 <div class="block-3">
-<h3>{{person.full_name}}</h3>
 
+<<<<<<< HEAD
 <div class="row">
   <div class="eight columns wrapper">
     <p><b>Имя: </b>{{person.first_name}}</p>
@@ -33,18 +33,51 @@ Heisen/Profile
           <div class="six columns">
             {% csrf_token %}
             <input class="button-primary" type="submit" value="Добавить тег">
+=======
+
+<div class="container">
+  <h2>{{person.full_name}}</h2>
+  <div class="row">
+    <div class="eight columns wrapper">
+      <p><b>Имя: </b>{{person.first_name}}</p>
+      <p><b>Фамилия:</b> {{person.last_name}}</p>
+      <p><b>Резюме:</b> {{person.cv_link}}</p>
+      {% if user.person.slack_id == person.slack_id or user.is_staff %}
+      <p><b>Рейтинг:</b> {{person.progress.rating}}</p>
+      {% endif %}
+      <p><b>Заданий выполнено:</b> {{person.progress.tasks_count}} <a href="/tasks/progress">Сравнить с другими</a> </p>
+      <p><b>Теги:</b> {% for tag in person.tags.all %}
+       __|{{tag.name}}|__
+      {% endfor %}</p>
+      {% if user.is_staff %}
+      <b>Добавить теги</b>
+      <form action="" method="post">
+        {% csrf_token %}
+          <div class="row ">
+            <div class="six columns">
+              <select class="u-full-width" id="tag_picker" name='tag'>
+                {% for tag in tags %}
+                 <option value="{{tag.name}}">{{tag.name}}</option>
+                {% endfor %}
+              </select>
+>>>>>>> pre_release
             </div>
-        </div>
+            <div class="six columns">
+              {% csrf_token %}
+              <input class="button-primary" type="submit" value="Добавить тег">
+              </div>
+          </div>
 
 
-    </form>
-    {% endif %}
-    {% if user.person.slack_id == person.slack_id %}
-    <p><a href="/logout">выйти</a></p>
-    {% endif %}
+      </form>
+      {% endif %}
+      {% if user.person.slack_id == person.slack_id %}
+      <p><a href="/logout">выйти</a></p>
+      {% endif %}
+      </div>
+      <div class="four columns image">
+      <img src={{person.slack_avatar}} style="floating:right"/>
     </div>
-    <div class="four columns image">
-    <img src={{person.slack_avatar}} style="floating:right"/>
   </div>
 </div>
 
