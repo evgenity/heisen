@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^team/', include('team.urls')),
     url(r'^$', include('home.urls')),
     url('', include('social.apps.django_app.urls', namespace='social')),
-    url(r'^complete/slack$', views.loggedin, name='index'),
+    #url(r'^complete/slack$', views.loggedin, name='index'),
     url(r'^logout$',views.logout,name='logout'),
     url(r'^robots.txt$',home_views.robots,name='robots'),
     url(r'^profile/(?P<slack_id>[\w-]+)',home_views.profile,name='profile'),
