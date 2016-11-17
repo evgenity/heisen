@@ -5,7 +5,9 @@
 {% block content %}
 {% load static %}
 {% if progress %}
-
+<link rel="stylesheet" href="{% static 'CSS/emoji.css' %}">
+<script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2"></script>
+<script src="{% static 'JS/emoji.js' %}"></script>
 <div class="block-table" style="overflow: scroll;">
   <table class="u-full-width" >
     <th class="th">

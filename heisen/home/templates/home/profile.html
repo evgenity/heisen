@@ -16,7 +16,7 @@ Heisen/Profile
       {% endif %}
       <p><b>Заданий выполнено:</b> {{person.progress.tasks_count}} <a href="/tasks/progress">Сравнить с другими</a> </p>
       <p><b>Теги:</b> {% for tag in person.tags.all %}
-       __|{{tag.name}}|__
+        {{tag.name}};
       {% endfor %}</p>
       {% if user.is_staff %}
       <b>Добавить теги</b>
