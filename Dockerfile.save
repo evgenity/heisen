@@ -27,9 +27,8 @@ RUN apt-get -yf install \
     build-essential \
     openssh-server \
     supervisor \
-    mlocate\
-		nginx-extras\
-		cron
+    mlocate \
+    cron
 
 # Install pip requirements
 ADD requirements.txt /code/
@@ -57,5 +56,5 @@ ADD . /code/
 
 RUN python /code/heisen/manage.py collectstatic --noinput
 #RUN python /code/heisen/manage.py crontab add home.cron.updater
-#RUN service cron restart
+RUN service cron restart
 CMD ["/usr/bin/supervisord"]

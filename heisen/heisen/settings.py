@@ -25,13 +25,8 @@ LOGIN_REDIRECT_URL = '/'
 SECRET_KEY = 'fzk#=xkr$fr%)!s5wz$j*x-phhf4g41yu%i%emw##v9!xmtm^_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-<<<<<<< HEAD
 DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost','*']
-=======
-DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
->>>>>>> pre_release
 
 
 # Application definition
@@ -146,14 +141,8 @@ STATICFILES_DIRS = [
 SOCIAL_AUTH_SLACK_KEY = os.environ.get('SLACK_CLIENT_ID')
 SOCIAL_AUTH_SLACK_SECRET = os.environ.get('SLACK_CLIENT_SECRET')
 SOCIAL_AUTH_SLACK_SCOPE = ['identify']
-<<<<<<< HEAD
 SOCIAL_AUTH_SANITIZE_REDIRECTS = False
 SOCIAL_AUTH_SLACK_AUTH_EXTRA_ARGUMENTS = {'team': 'heisenspaces'}
-=======
-
-
-SOCIAL_AUTH_SANITIZE_REDIRECTS = False
->>>>>>> pre_release
 
 AUTHENTICATION_BACKENDS = (
     'social.backends.slack.SlackOAuth2',
