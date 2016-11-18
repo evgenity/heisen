@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Exo 2 Thin'), local('Exo2-Thin'), url(https://fonts.gstatic.com/s/exo2/v3/5ptdZed4kGvXOa6zPQvXbwLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Exo 2 Extra Light'), local('Exo2-ExtraLight'), url(https://fonts.gstatic.com/s/exo2/v3/RFCNDwJa8dM0kzqVeuqPjHYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Exo 2 Light'), local('Exo2-Light'), url(https://fonts.gstatic.com/s/exo2/v3/JWvvdsUbb528VH-BDTzpW3YhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Exo 2'), local('Exo2-Regular'), url(https://fonts.gstatic.com/s/exo2/v3/KzoFUeaQw_faskDsymvVJqCWcynf_cDxXwCLxiixG1c.woff) format('woff');
+}

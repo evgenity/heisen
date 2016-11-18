@@ -55,6 +55,9 @@ ADD ./letsencrypt/ /etc/letsencrypt/
 # Add main codebase
 ADD . /code/
 
+RUN sudo mkdir -p /var/lib/nginx/cache
+RUN sudo chown www-data /var/lib/nginx/cache
+RUN sudo chmod 700 /var/lib/nginx/cache
 RUN python /code/heisen/manage.py collectstatic --noinput
 #RUN python /code/heisen/manage.py crontab add home.cron.updater
 #RUN service cron restart

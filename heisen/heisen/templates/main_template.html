@@ -9,12 +9,50 @@
 ">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400" rel="stylesheet">
   <script src="https://use.fontawesome.com/fafb9ab347.js"></script>
+
+  {# <link href="https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'CSS/normalize.css' %}">
   <link rel="stylesheet" href="{% static 'CSS/skeleton.css' %}">
-  <link rel="stylesheet" href="{% static 'CSS/custom.css' %}">
-  <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png'%}">
+  <link rel="stylesheet" href="{% static 'CSS/custom.css' %}">#}
+
+  <link rel="stylesheet" href="{% static 'CSS/minified.css' %}">
+
+  {#Schema Structured Data #}
+  <script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Heisen",
+  "url": "https://heisen.me",
+  "logo": "https://heisen.me/static/images/heisen_spaces_transparent_logo.png",
+  "image": "https://heisen.me/static/images/heisen_spaces_transparent_logo.png",
+  "description": "Сообщество Heisen объединяет активных людей. Мы хотим делиться опытом и учиться новому. Мы быстро растем и самостоятельно решаем любые задачи.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3503 Jack Northrop Ave Suite AH761 ",
+    "addressLocality": "Hawthorne",
+    "addressRegion": "CA",
+    "postalCode": "90250",
+    "addressCountry": "USA"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+7 (985) 128-37-08"
+  }
+}
+ </script>
+
+  {# Favicon part#}
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'images/favicon-32x32.png' %}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{% static 'images/favicon-16x16.png' %}" sizes="16x16">
+  <link rel="manifest" href="{% static 'images/manifest.json' %}">
+  <link rel="mask-icon" href="{% static 'images/safari-pinned-tab.svg' %}" color="#00a300">
+  <meta name="apple-mobile-web-app-title" content="Heisen.me' %}">
+  <meta name="application-name" content="Heisen.me">
+  <meta name="theme-color" content="#ffffff">
 
 </head>
 <body>
@@ -23,7 +61,7 @@
       <div class="seven columns nav-logo">
         <div class="brand">
           <div class="one columns">
-            <a href="/"><img class="logotype" src="{% static 'images/heisen_spaces_transparent_logo.png' %}" alt=""></a>
+            <a href="/"><img class="logotype" src="{% static 'images/heisen_spaces_transparent_logo.png' %}" alt="logo"></a>
           </div>
           <div class="eight columns brand-name">
             <h5>Heisen</h5>
@@ -73,7 +111,13 @@
   <div class="container">
     <div class="row">
       <div class="four columns contacts-mob">
-        <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@heisen.me">info@heisen.me</a></p>
+        <p><i class="fa fa-envelope" aria-hidden="true"></i>
+        <script>document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'i'+'l'+'t'+'o'+'&'+'#'+'5'+'8'+';'+'i'+'n'+'%'+'6'+'6'+
+'%'+'6'+'&'+'#'+'7'+'0'+';'+'&'+'#'+'6'+'4'+';'+'%'+'6'+'8'+'&'+'#'+'1'+'0'+'1'+';'+'%'+'&'+'#'+'5'+
+'4'+';'+'&'+'#'+'5'+'7'+';'+'s'+'e'+'n'+'&'+'#'+'4'+'6'+';'+'%'+'6'+'D'+'e'+"'"+'>'+'&'+'#'+'1'+'0'+
+'5'+';'+'&'+'#'+'1'+'1'+'0'+';'+'f'+'o'+'&'+'#'+'6'+'4'+';'+'h'+'e'+'i'+'s'+'e'+'n'+'&'+'#'+'4'+'6'+
+';'+'m'+'e'+'<'+'/'+'a'+'>');</script><noscript>[Turn on JavaScript to see the email address]</noscript>
+        </p>
         <p><i class="fa fa-phone-square" aria-hidden="true"></i>+7 (985) 128-37-08</p>
         <p><a href="/contacts/">Реквизиты</a></p>
       </div>
@@ -103,7 +147,7 @@
     </div>
   </div>
 </footer>
-  <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter40177012 = new Ya.Metrika({ id:40177012, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40177012" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+  <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter40177012 = new Ya.Metrika({ id:40177012, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40177012" style="position:absolute; left:-9999px;" alt="ya" /></div></noscript> <!-- /Yandex.Metrika counter -->
   <!-- GoogleAnalytics -->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
