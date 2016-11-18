@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 #Django-crontab settings
 #https://pypi.python.org/pypi/django-crontab
 CRONJOBS = [
-    ('2 * * * *', 'home.cron.updater','>> /var/log/heisen_updater.log'),
+    ('2 * * * *', 'home.cron.updater'),
 ]
 
 # Internationalization
