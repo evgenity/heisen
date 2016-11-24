@@ -14,6 +14,11 @@ body {
   padding: 0;
 }
 
+.fa -.fa-check{
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 2em;
+}
 
 
 /*NAVBAR
@@ -176,7 +181,6 @@ _________________________________________________*/
 }
 
 .icons {
-	font-size: 2em;
 	color: #484d52;
 }
 
@@ -197,6 +201,7 @@ _________________________________________________*/
 	-ms-filter: grayscale(100%);
 	-o-filter: grayscale(100%);*/
 }
+
 
 .avatar:active, .avatar:focus, .avatar:hover {
 	filter: none;
@@ -256,7 +261,11 @@ _________________________________________________*/
 
 .share-button a {
 	color: white;
-	margin: 10px;
+	/*margin: 10px;*/
+}
+
+.share-button {
+  margin: 0px;
 }
 
 .row-adress {
