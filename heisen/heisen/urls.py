@@ -19,9 +19,12 @@ from . import views
 from home import views as home_views
 from heisen import settings
 from django.conf.urls.static import static
+from django.conf.urls import (
+handler400, handler403, handler404, handler500
+)
 
-
-
+handler500 = 'heisen.views.server_error'
+handler404 = 'heisen.views.page_not_found'
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^partners/', include('partners.urls')),
