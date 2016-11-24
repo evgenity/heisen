@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from . import views
 from home import views as home_views
+from heisen import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -30,5 +32,8 @@ urlpatterns = [
     url(r'^robots.txt$',home_views.robots,name='robots'),
     url(r'^profile/(?P<slack_id>[\w-]+)',home_views.profile,name='profile'),
     url(r'^contacts/',home_views.contacts,name='contacts'),
+    url(r'^blog/', include('zinnia.urls')),
 #    url(r'^complete/slack$', views.loggedin, name='index'),
     ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

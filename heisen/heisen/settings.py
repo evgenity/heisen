@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
+SECRET_KEY = 'fzk#=xkr$fr%)!s5wz$j*x-phhf4g41yu%i%emw##v9!xmtm^_'
 APPEND_SLASH = False
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +22,6 @@ LOGIN_REDIRECT_URL = '/'
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fzk#=xkr$fr%)!s5wz$j*x-phhf4g41yu%i%emw##v9!xmtm^_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,7 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_comments',
+    'django.contrib.sites',
+    'mptt',
+    'tagging',
+    'zinnia',
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,7 +66,7 @@ ROOT_URLCONF = 'heisen.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['heisen/templates'],
+        'DIRS': ['heisen/templates','blog/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'zinnia.context_processors.version',
 
             ],
         },
@@ -92,6 +98,10 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
+
+MEDIA_ROOT = 'uploads/'
+
+MEDIA_URL = 'uploads/'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -165,3 +175,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
 )
+
+#Zinnia part
+ZINNIA_MARKUP_LANGUAGE = 'markdown'
+ZINNIA_PAGINATION = 5
+ZINNIA_UPLOAD_TO = 'heisen/static/images/'

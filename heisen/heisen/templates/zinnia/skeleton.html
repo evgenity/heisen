@@ -1,0 +1,41 @@
+{% extends "main_template.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}
+Heisen/Profile
+{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/blog.css' %}">
+<div class="block-blog row">
+  <div class="block-1 eight columns">
+    {% block content_zinnia %}
+    <div class="links">
+      <h2>{% trans "Useful links" %}</h2>
+      <ul>
+        <li>
+          <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
+            {% trans "Weblog index" %}
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}">
+            {% trans "Sitemap" %}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="search">
+      <h2>{% trans "Search" %}</h2>
+      {% include "zinnia/tags/search_form.html" %}
+    </div>
+    {% endblock content_zinnia %}
+  </div>
+
+  <div class="sidebar four columns block-1">
+  {% block sidebar %}
+  {% endblock sidebar %}
+  </div>
+</div>
+{% endblock content %}

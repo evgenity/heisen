@@ -6,7 +6,9 @@ class Person extends Component{
           <div className='two columns member'>
             <a href={this.props.url}>
               <img className='u-max-full-width avatar' src={this.props.slack_avatar} /> </a>
-            <p className='first_name'> {this.props.first_name} </p>
+            <p className='first_name'> {this.props.first_name}
+              {this.props.skills.indexOf("Verified")>-1 ? <i className="fa fa-check" aria-hidden="true"></i> : ""}
+            </p>
           </div>
         );
     }
@@ -30,7 +32,7 @@ export default class Team extends Component {
     render() {
         const { team, filter } = this.props
         var team_list = this.team_filter(team,filter).map(function(p, i){
-            return <Person first_name={p.name} url={p.url} slack_avatar={p.avatar} key={i}/>
+            return <Person first_name={p.name} skills={p.skills} url={p.url} slack_avatar={p.avatar} key={i}/>
         });
         return (
               <div className='row names-team'>

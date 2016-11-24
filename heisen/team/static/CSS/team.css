@@ -1,0 +1,52 @@
+
+/**, *::before, *::after {
+  box-sizing: border-box;
+}*/
+
+input {
+  position: absolute;
+  left: -9999px;
+}
+
+label {
+  display: block;
+  position: relative;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  color: black;
+  background-color: #f2f2f2;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color .1s, box-shadow .2s;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+label::before {
+  border: 3px solid black;
+  border-radius: 100px;
+  transition: background-color .2s;
+}
+
+/*label:first-of-type {
+  transform: translateX(-40px);
+}
+
+label:last-of-type {
+  transform: translateX(40px);
+}*/
+
+input:checked + label {
+  background-color: #42ae63;
+  color: #fff;
+}
+
+input:checked + label::before {
+  background-color: #fff;
+}

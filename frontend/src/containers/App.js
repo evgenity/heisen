@@ -17,11 +17,11 @@ class App extends Component {
       const { setTeam } = this.props.teamActions
       const {setTags} = this.props.tagsActions
       const { team,tags} = this.props
-      request.get('https://heisen.me/team/filter').end(function(err, res){
+      request.get('filter').end(function(err, res){
           var t = JSON.parse(res.text)
           setTeam(t)
       });
-      request.get('https://heisen.me/team/tags').end(function(err, res){
+      request.get('tags').end(function(err, res){
           var t = JSON.parse(res.text)
           setTags(t)
       });
