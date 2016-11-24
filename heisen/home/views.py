@@ -13,6 +13,10 @@ def robots(request):
     template_name = 'home/robots.txt'
     return render(request,template_name)
 
+def sitemap(request):
+    template_name = 'home/sitemap.xml'
+    return render(request,template_name)
+
 def contacts(request):
     template_name = 'home/contacts.html'
     return render(request,template_name)

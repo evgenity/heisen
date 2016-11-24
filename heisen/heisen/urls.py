@@ -20,6 +20,8 @@ from home import views as home_views
 from heisen import settings
 from django.conf.urls.static import static
 
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^partners/', include('partners.urls')),
@@ -30,6 +32,7 @@ urlpatterns = [
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^logout$',views.logout,name='logout'),
     url(r'^robots.txt$',home_views.robots,name='robots'),
+    url(r'^sitemap.xml$',home_views.sitemap,name='sitemap'),
     url(r'^profile/(?P<slack_id>[\w-]+)',home_views.profile,name='profile'),
     url(r'^contacts/',home_views.contacts,name='contacts'),
     url(r'^blog/', include('zinnia.urls')),
