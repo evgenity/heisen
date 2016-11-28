@@ -3,11 +3,15 @@
 import json
 import re
 import collections
-import os.path
+import os
 import time
 
 import requests
 import emoji
+import django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "heisen.settings")
+django.setup()
 
 from home.models import Channel
 from team.models import Person

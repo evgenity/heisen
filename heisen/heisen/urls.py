@@ -39,6 +39,7 @@ urlpatterns = [
     url(r'^profile/(?P<slack_id>[\w-]+)',home_views.profile,name='profile'),
     url(r'^contacts/',home_views.contacts,name='contacts'),
     url(r'^blog/', include('zinnia.urls')),
+    url(r'^django-rq/', include('django_rq.urls')),
 #    url(r'^complete/slack$', views.loggedin, name='index'),
     ]
 if settings.DEBUG:

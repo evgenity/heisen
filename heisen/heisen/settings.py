@@ -1,4 +1,3 @@
-
 """
 Django settings for heisen project.
 
@@ -24,7 +23,7 @@ LOGIN_REDIRECT_URL = '/'
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost','*']
 
 
@@ -49,6 +48,7 @@ INSTALLED_APPS = [
     'mptt',
     'tagging',
     'zinnia',
+    'django_rq'
 ]
 SITE_ID = 1
 
@@ -175,6 +175,29 @@ SOCIAL_AUTH_PIPELINE = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
+)
+
+RQ_QUEUES = {
+    'default': {
+        'HOST': 'localhost',
+        'PORT': 6379,
+        'DB': 0,
+        'DEFAULT_TIMEOUT': 500,
+    },
+}
+
+import django_rq
+from home.cron import updater
+from datetime import datetime
+scheduler = django_rq.get_scheduler('default')
+#job = scheduler.enqueue_at(datetime(2020, 10, 10), func)
+job = scheduler.schedule(
+    scheduled_time=datetime.utcnow(), # Time for first execution, in UTC timezone
+    func=updater,                     # Function to be queued
+    args=[],             # Arguments passed into function when executed
+    kwargs={},         # Keyword arguments passed into function when executed
+    interval=180,                   # Time before the function is called again, in seconds
+    repeat=None                      # Repeat this number of times (None means repeat forever)
 )
 
 #Zinnia part

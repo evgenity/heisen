@@ -10,6 +10,8 @@ from team.models import Person, Tag
 from tasks.models import Task, Reaction, Progress
 from home.models import Channel
 
+from django_rq import job
+
 def update_avatar(icon,link,user):
     if re.match("^https:\/\/avatars\.slack-edge\.com",link):
         user.avatar=1
@@ -118,10 +120,10 @@ def update_tags():
 
 
 
-
 def updater():
     update_channels()
     update_team()
     update_tasks()
     update_tags()
     update_thanks()
+    return "all jobs done"

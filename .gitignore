@@ -4,7 +4,7 @@ venv/
 *.pyc
 letsencrypt/
 
-
+*.rdb
 # Logs
 logs
 *.log
