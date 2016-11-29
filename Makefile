@@ -13,7 +13,7 @@ exec:
 reload:
 	-docker stop $$(docker ps -q)
 	docker build -t evgeni/heisen .
-	@docker run -t -p 80:80 -p 443:443 --env DROPBOX_TOKEN=$$DROPBOX_TOKEN --env SLACK_TOKEN=$$SLACK_TOKEN --env SLACK_CLIENT_ID=$$SLACK_CLIENT_ID --env SLACK_CLIENT_SECRET=$$SLACK_CLIENT_SECRET --env DROPBOX_TOKEN=$$DROPBOX_TOKEN -v /tmp:/tmp  evgeni/heisen 
+	@docker run -t -p 80:80 -p 443:443 --env DROPBOX_TOKEN=$$DROPBOX_TOKEN --env SLACK_TOKEN=$$SLACK_TOKEN --env SLACK_CLIENT_ID=$$SLACK_CLIENT_ID --env SLACK_CLIENT_SECRET=$$SLACK_CLIENT_SECRET --env DROPBOX_TOKEN=$$DROPBOX_TOKEN -v /tmp:/tmp  evgeni/heisen
 
 fixqcow:
 	rm -rf ~/Library/Containers/com.docker.docker/Data/*

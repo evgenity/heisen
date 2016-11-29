@@ -1,10 +1,13 @@
 beautifulsoup4==4.5.1
+click==6.6
+croniter==0.3.13
 Django==1.10.2
 django-blog-zinnia==0.18.1
 django-contrib-comments==1.7.3
 django-crontab==0.7.1
 django-mptt==0.8.6
 django-redis-cache==1.7.1
+django-rq==0.9.4
 django-social-auth==0.7.28
 django-tagging==0.4.5
 django-xmlrpc==0.1.7
@@ -20,6 +23,7 @@ oauthlib==2.0.0
 Pillow==3.4.2
 PyJWT==1.4.2
 pyparsing==2.1.10
+python-dateutil==2.6.0
 python-openid==2.2.5
 python-social-auth==0.2.21
 pytz==2016.7
@@ -27,6 +31,8 @@ redis==2.10.5
 regex==2016.11.18
 requests==2.11.1
 requests-oauthlib==0.7.0
+rq==0.7.0
+rq-scheduler==0.7.0
 six==1.10.0
 typing==3.5.2.2
 urllib3==1.19.1

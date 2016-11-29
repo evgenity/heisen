@@ -23,7 +23,7 @@ LOGIN_REDIRECT_URL = '/'
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost','*']
 
 
@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'mptt',
     'tagging',
     'zinnia',
-    'django_rq'
+    'django_rq',
+    # 'home.scheduler'
 ]
 SITE_ID = 1
 
@@ -185,30 +186,6 @@ RQ_QUEUES = {
         'DEFAULT_TIMEOUT': 500,
     },
 }
-
-import django_rq
-from home.cron import updater
-from home.backup import init_and_update
-from datetime import datetime
-scheduler = django_rq.get_scheduler('default')
-#job = scheduler.enqueue_at(datetime(2020, 10, 10), func)
-job = scheduler.schedule(
-    scheduled_time=datetime.utcnow(), # Time for first execution, in UTC timezone
-    func=updater,                     # Function to be queued
-    args=[],             # Arguments passed into function when executed
-    kwargs={},         # Keyword arguments passed into function when executed
-    interval=180,                   # Time before the function is called again, in seconds
-    repeat=None                      # Repeat this number of times (None means repeat forever)
-)
-
-# backup = scheduler.schedule(
-#     scheduled_time=datetime.utcnow(), # Time for first execution, in UTC timezone
-#     func=init_and_update,                     # Function to be queued
-#     args=[],             # Arguments passed into function when executed
-#     kwargs={},         # Keyword arguments passed into function when executed
-#     interval=12*60*60, #12hours               # Time before the function is called again, in seconds
-#     repeat=None                      # Repeat this number of times (None means repeat forever)
-# )
 
 
 #Zinnia part

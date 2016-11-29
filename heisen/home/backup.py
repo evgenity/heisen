@@ -11,7 +11,7 @@ from dropbox.exceptions import ApiError, AuthError
 DROPBOX_TOKEN = os.environ.get('DROPBOX_TOKEN')
 
 LOCALFILE = '/tmp/db.sqlite3'
-BACKUPPATH = '/db.sqlite3'
+BACKUPPATH = '/db2.sqlite3'
 
 # Uploads contents of LOCALFILE to Dropbox
 def backup():

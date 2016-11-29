@@ -15,6 +15,7 @@ RUN apt-get -yf install \
 	apt-utils \
 	dpkg-dev \
 	libc6-dev \
+	redis-server\
 	g++ \
     curl \
     python \
@@ -29,7 +30,8 @@ RUN apt-get -yf install \
     supervisor \
     mlocate\
 		nginx-extras\
-		cron
+		cron\
+		--fix-missing
 
 # Install pip requirements
 ADD requirements.txt /code/
@@ -58,7 +60,7 @@ ADD . /code/
 RUN mkdir -p /var/lib/nginx/cache
 RUN chown www-data /var/lib/nginx/cache
 RUN chmod 700 /var/lib/nginx/cache
-RUN python /code/heisen/manage.py collectstatic --noinput
+#RUN python /code/heisen/manage.py collectstatic --noinput
 #RUN python /code/heisen/manage.py crontab add home.cron.updater
 
 #backups
