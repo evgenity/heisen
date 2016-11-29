@@ -14,7 +14,7 @@ LOCALFILE = '/tmp/db.sqlite3'
 BACKUPPATH = '/db2.sqlite3'
 
 # Uploads contents of LOCALFILE to Dropbox
-def backup():
+def backup(dbx):
     with open(LOCALFILE, 'rb') as f:
         # We use WriteMode=overwrite to make sure that the settings in the file
         # are changed on upload
@@ -65,12 +65,14 @@ def select_revision():
     return revisions[0].rev
 
 def init_and_update():
+    DROPBOX_TOKEN = os.environ.get('DROPBOX_TOKEN')
+    dbx = dropbox.Dropbox(DROPBOX_TOKEN)
     dbx = dropbox.Dropbox(DROPBOX_TOKEN)
     try:
         dbx.users_get_current_account()
     except AuthError as err:
         sys.exit("ERROR: Invalid access token; try re-generating an access token from the app console on the web.")
-    backup()
+    backup(dbx)
     return ("Done!")
 
 if __name__ == '__main__':
