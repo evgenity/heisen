@@ -14,7 +14,7 @@ RUN mkdir -p /etc/supervisor/conf.d/
 ADD ./conf/heisen_supervisor.conf /etc/supervisor/conf.d/
 
 # Add main codebase
-RUN cd /code/heisen && python manage.py collectstatic --noinput >> /var/log/collectstatic.log
+# RUN cd /code/heisen && python manage.py collectstatic --noinput >> /var/log/collectstatic.log
 
 RUN mkdir -p /var/lib/nginx/cache
 RUN chown www-data /var/lib/nginx/cache
