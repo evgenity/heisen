@@ -15,7 +15,7 @@ django.setup()
 
 from home.models import Channel
 from team.models import Person
-Slacktoken = os.environ['SLACK_TOKEN']
+Slacktoken = 'xoxp-77214310949-77207471878-82271165568-69a76192e24935409175688e8656ad4b'
 
 '''emoji_list={
     "+1":"👍",

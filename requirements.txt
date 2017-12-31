@@ -13,7 +13,7 @@ django-tagging==0.4.5
 django-xmlrpc==0.1.7
 dropbox==7.1.1
 emoji==0.3.9
-gunicorn==19.6.0
+gunicorn
 httplib2==0.9.2
 jsonfield==1.0.3
 Markdown==2.6.7
@@ -27,12 +27,12 @@ python-dateutil==2.6.0
 python-openid==2.2.5
 python-social-auth==0.2.21
 pytz==2016.7
-redis==2.10.5
+redis
 regex==2016.11.18
 requests==2.11.1
 requests-oauthlib==0.7.0
-rq==0.7.0
-rq-scheduler==0.7.0
+rq
+rq-scheduler
 six==1.10.0
 typing==3.5.2.2
 urllib3==1.19.1
