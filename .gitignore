@@ -27,3 +27,4 @@ frontend/build/Release
 node_modules
 # Bower
 bower_components/
+.env
