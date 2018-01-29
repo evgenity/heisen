@@ -342,3 +342,7 @@ _________________________________________________*/
 	.content-left {display: table-footer-group; text-align: left; padding-left: 0;}
 	.content-right {padding-right: 0;}
 }
+
+@media screen and (max-width: 600px) {
+  #stripes {height: 600px !important;}
+}
