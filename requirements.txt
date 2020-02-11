@@ -1,7 +1,7 @@
 beautifulsoup4==4.5.1
 click==6.6
 croniter==0.3.13
-Django==1.10.2
+Django==1.11.28
 django-blog-zinnia==0.18.1
 django-contrib-comments==1.7.3
 django-crontab==0.7.1
