@@ -14,7 +14,7 @@ django-xmlrpc==0.1.7
 dropbox==7.1.1
 emoji==0.3.9
 gunicorn
-httplib2==0.9.2
+httplib2==0.18.0
 jsonfield==1.0.3
 Markdown==2.6.7
 mots-vides==2015.5.11
