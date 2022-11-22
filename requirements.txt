@@ -20,7 +20,7 @@ Markdown==2.6.7
 mots-vides==2015.5.11
 oauth2==1.9.0.post1
 oauthlib==2.0.0
-Pillow==3.4.2
+Pillow==9.3.0
 PyJWT==1.4.2
 pyparsing==2.1.10
 python-dateutil==2.6.0
